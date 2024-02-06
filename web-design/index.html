@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link rel="stylesheet" href="../assets/css/output.css">
+        <title>Potfólio</title>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li onclick="abrirMenu()">Contato</li>
+            </ul>
+        </header>
+        <main id="web-design">
+            <section id="head">
+                <h1>Web Design</h1>
+            </section>
+            <section id="trabalhos">
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - Us Consultoria')">
+                    <div id="web-trabalho-usc"><div id="content-box">Site - Us Consultoria</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - Estudo OnePage 01')">
+                    <div id="web-trabalho-eop1"><div id="content-box">Site - Estudo OnePage 01</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - Estudo Landing Page 01')">
+                    <div id="web-trabalho-elp"><div id="content-box">Site - Estudo Landing Page 01</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - Estudo OnePage 02')">
+                    <div id="web-trabalho-eop2"><div id="content-box">Site - Estudo OnePage 02</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - Allons-y')">
+                    <div id="web-trabalho-all"><div id="content-box">Site - Allons-y</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - GTX100 Incentivos')">
+                    <div id="web-trabalho-gtx"><div id="content-box">Site - GTX100 Incentivos</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - InfinityTech')">
+                    <div id="web-trabalho-inf"><div id="content-box">Site - InfinityTech</div></div>
+                </a>
+                <a href="#" onclick="abrirImagem('webdesign', 'Site - SPWorking')">
+                    <div id="web-trabalho-spw"><div id="content-box">Site - SPWorking</div></div>
+                </a>
+            </section>
+            <section id="img-popup">
+                <i data-feather="x" onclick="fecharImagem()"></i>
+            </section>
+        </main>
+        <aside id="menu-lateral">
+            <section>
+                <i data-feather="x" onclick="abrirMenu()"></i>
+                <h3>Contato</h3>
+                <ul>
+                    <li><i data-feather="mail"></i>douglas12345.dsm@gmail.com</li>
+                    <li><i data-feather="phone"></i>+55 11 95305-5285</li>
+                </ul>
+                <h3>Social</h3>
+                <ul>
+                    <li><i data-feather="linkedin"></i>/in/douglas-m-462ba6a4/</li>
+                    <li><i data-feather="instagram"></i>@doug_moura</li>
+                    <li><i data-feather="github"></i>github.com/douglas-moura</li>
+                    <li><i data-feather="globe"></i>behance.net/douglasmoura</li>
+                </ul>
+            </section>
+        </aside>
+        <footer>
+            Douglas de Souza Moura | Portfólio 2024
+        </footer>
+        <script>
+            feather.replace();
+        </script>
+        <script src="../assets/js/contato.js"></script>
+        <script src="../assets/js/galeria.js"></script>
+    </body>
+</html>

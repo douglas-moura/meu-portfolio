@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link rel="stylesheet" href="assets/css/output.css">
+        <title>Potfólio</title>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li onclick="abrirMenu()">Contato</li>
+            </ul>
+        </header>
+        <img id="pelicula" src="./src/img/3d-abstract-wave-pattern-background.jpg" alt="">
+        <main>
+            <section id="head">
+                <h1>Douglas Moura</h1>
+                <h5>Web Design, Ilustrador e Web Developer | São Paulo - SP</h5>
+            </section>
+            <section id="trabalhos">
+                <a href="./web-design/index.html">
+                    <div id="web">
+                        <div id="content-box">
+                            <i data-feather="globe"></i>
+                            Web Design
+                        </div>
+                    </div>
+                </a>
+                <a href="./ilustracao/index.html">
+                    <div id="ilu">
+                        <div id="content-box">
+                            <i data-feather="pen-tool"></i>
+                            Ilustrações
+                        </div>
+                    </div>
+                </a>
+                <a href="./logo/index.html">
+                    <div id="log">
+                        <div id="content-box">
+                            <i data-feather="star"></i>
+                            Logos
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.behance.net/collection/187641217/Animacoes" target="_blank">
+                    <div id="mot">
+                        <div id="content-box">                        
+                            <i data-feather="play"></i>
+                            Motion Design
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </main>
+        <aside id="menu-lateral">
+            <section>
+                <i data-feather="x" onclick="abrirMenu()"></i>
+                <h3>Contato</h3>
+                <ul>
+                    <li><i data-feather="mail"></i>douglas12345.dsm@gmail.com</li>
+                    <li><i data-feather="phone"></i>+55 11 95305-5285</li>
+                </ul>
+                <h3>Social</h3>
+                <ul>
+                    <li><i data-feather="linkedin"></i>/in/douglas-m-462ba6a4/</li>
+                    <li><i data-feather="instagram"></i>@doug_moura</li>
+                    <li><i data-feather="github"></i>github.com/douglas-moura</li>
+                    <li><i data-feather="globe"></i>behance.net/douglasmoura</li>
+                </ul>
+            </section>
+        </aside>
+        <footer>
+            Douglas de Souza Moura | Portfólio 2024
+        </footer>
+        <script>
+            feather.replace();
+        </script>
+        <script src="assets/js/contato.js"></script>
+    </body>
+</html>
