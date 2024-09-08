@@ -1,6 +1,6 @@
 <template>
     <NavMenu />
-    <RouterView class="box-sup" />
+    <RouterView />
     <PageFoot />
 </template>
 
@@ -10,21 +10,27 @@
     import PageFoot from '../src/components/layouts/PageFoot.vue'
 </script>
 
-<style scoped>
-    main {
-        min-height: 93dvh;
-    }
-
+<style>
     main, footer {
         width: 94%;
-        padding: 1rem;
         float: right;
         animation-name: fade-in;
         animation-duration: 2s;
+    }
+
+    main {
+        min-height: 95dvh;
+        padding: 4rem 2rem;
 
         section {
-            width: 75%;
+            margin: auto;
+            width: 80%;
         }
+    }
+
+    footer {   
+        min-height: 5dvh;
+        padding: 0 2rem;
     }
 
     aside {

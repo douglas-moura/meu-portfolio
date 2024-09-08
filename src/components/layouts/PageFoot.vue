@@ -32,11 +32,11 @@
 <style scoped>
     footer {
         text-align: center;
-        max-height: 7dvh;
 
         h6 {
             color: var(--cinza-medio);
             font-weight: 500;
+            margin: auto 0;
         }
     }
 </style>

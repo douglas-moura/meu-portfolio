@@ -2,7 +2,7 @@
     <div
         id="circulo"
         :class="cor"
-        :style="'top:' + top + 'rem; left:' + left + 'rem; width:' + largura + '%; z-index:' + (tipo === 'fundo' ? 900 : 998) + ';'">
+        :style="'top:' + top + 'rem; left:' + left + 'rem; width:' + largura + '%; z-index:' + (tipo == 'fundo' ? 900 + '; position: fixed;' : 998 + '; position: absolute;')">
     </div>
 </template>
 
@@ -23,7 +23,6 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        position: absolute;
         border: .1rem solid var(--branco);
     }
 

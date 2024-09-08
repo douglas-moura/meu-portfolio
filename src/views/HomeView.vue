@@ -20,7 +20,7 @@
                         top=-1.5
                         left=-2
                         largura=100
-                        tipo="fundo"
+                        tipo="frente"
                         cor="laranja"
                     />
                     <ImagemCmp
@@ -53,11 +53,8 @@
 
 <style scoped>
     #pag-home {
-        display: flex;
-
         section {
-            margin: auto;
-            max-width: 75%;
+            width: 70%;
 
             div {
                 #minhas-infos {
@@ -98,7 +95,7 @@
 
             #tecnologias {
                 margin-top: 2rem;
-                width: 65%;
+                width: 65% !important;
 
                 span {
                     svg {

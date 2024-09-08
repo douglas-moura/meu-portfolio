@@ -169,7 +169,7 @@
             }
 
             #links-sociais {
-                width: fit-content;
+                width: fit-content !important;
                 display: flex;
                 
                 i {
