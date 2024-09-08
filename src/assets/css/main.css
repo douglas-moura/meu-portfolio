@@ -21,9 +21,13 @@ body {
     font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     color: var(--cinza-escuro) !important;
+    overflow: hidden;
     
     aside { z-index: 999; }
-    main { z-index: 998; }
+    main {
+        z-index: 998;
+        position: relative;
+    }
 
     header, aside, nav, section, a  {
         display: flex;
@@ -65,13 +69,11 @@ body {
 .box-sup {
     padding: 1rem;
     border-radius: 1rem;
-    overflow: hidden;
 }
 
 .box-sub {
     padding: .5rem;
     border-radius: .5rem;
-    overflow: hidden;
 }
 
 @keyframes fade-in {

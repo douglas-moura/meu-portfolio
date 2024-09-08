@@ -6,11 +6,17 @@
                     <h1>Douglas Moura</h1>
                     <h5>_Desenvolvedor Web FrontEnd - São Paulo | SP</h5>
                     <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, quia nesciunt vel similique atque, sunt unde delectus distinctio error dignissimos dolore? Repellat, voluptatem modi expedita pariatur itaque quod alias. Blanditiis.</p>
+                    <p>Lorem ipsum dolor sit amet, consecbtetur adipisicing elit. Debitis, quia nesciunt vel similique atque, sunt unde delectus distinctio error dignissimos dolore? Repellat, voluptatem modi expedita pariatur itaque quod alias. Blanditiis.</p>
                 </div>
                 <picture>
-                    <div id="circulo"></div>
-                    <ImagemComp
+                    <CirculoCmp
+                        top=-1.5
+                        left=-2
+                        largura=100
+                        tipo="fundo"
+                        cor="laranja"
+                    />
+                    <ImagemCmp
                         src="foto-perfil"
                         formato="redondo"
                         textoAlt="Minha Foto"
@@ -33,7 +39,8 @@
 </template>
 
 <script setup>
-    import ImagemComp from '@/components/layouts/ImagemComp.vue'
+    import ImagemCmp from '@/components/layouts/ImagemCmp.vue'
+    import CirculoCmp from '@/components/layouts/CirculoCmp.vue'
     import { Icon } from '@iconify/vue'
 </script>
 
@@ -76,16 +83,6 @@
                     }
                 }
             }
-        }
-
-        #circulo {
-            left: -2rem;
-            top: -1rem;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border: .1rem solid var(--laranja);
-            border-radius: 50%;
-            position: absolute;
         }
     }
 </style>
