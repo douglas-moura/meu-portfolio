@@ -13,13 +13,13 @@
                     <vue-feather size="18" type="user"></vue-feather>
                     <p class="textLink">Sobre mim</p>
                 </RouterLink>
-                <RouterLink to="/habilidades">
-                    <vue-feather size="18" type="code"></vue-feather>
-                    <p class="textLink">Minhas Habilidades</p>
-                </RouterLink>
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="folder"></vue-feather>
                     <p class="textLink">Projetos</p>
+                </RouterLink>
+                <RouterLink to="/habilidades">
+                    <vue-feather size="18" type="code"></vue-feather>
+                    <p class="textLink">Minhas Habilidades</p>
                 </RouterLink>
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="layers"></vue-feather>
@@ -79,7 +79,7 @@
                     textLink[i].style.marginLeft = '1rem'
                 }
                 for(let i = 0; i < Object.keys(iconeSocial).length; i++) {
-                    iconeSocial[i].style.marginRight = '.5rem'
+                    iconeSocial[i].style.marginRight = '.2rem'
                     iconeSocial[i].style.opacity = '1'
                 }
                 //nome.style.opacity = '1'
@@ -173,7 +173,7 @@
                 display: flex;
                 
                 i {
-                    border: .1rem solid var(--cinza-medio);
+                    border: .1rem solid var(--branco);
                     padding: .5rem;
                     border-radius: 50%;
                     color: var(--cinza-medio);

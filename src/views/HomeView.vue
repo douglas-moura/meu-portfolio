@@ -24,7 +24,7 @@
                         cor="laranja"
                     />
                     <ImagemCmp
-                        src="foto-perfil"
+                        src="foto-perfil-2"
                         formato="redondo"
                         textoAlt="Minha Foto"
                     />
