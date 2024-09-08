@@ -4,9 +4,16 @@
             <div>
                 <div id="minhas-infos">
                     <h1>Douglas Moura</h1>
-                    <h5>_Desenvolvedor Web FrontEnd - São Paulo | SP</h5>
+                    <h5>_Desenvolvedor Web Front-End - São Paulo | SP</h5>
                     <br>
                     <p>Lorem ipsum dolor sit amet, consecbtetur adipisicing elit. Debitis, quia nesciunt vel similique atque, sunt unde delectus distinctio error dignissimos dolore? Repellat, voluptatem modi expedita pariatur itaque quod alias. Blanditiis.</p>
+                    <br>
+                    <span id="contatos">
+                        <Icon icon="akar-icons:envelope" height="1.2rem" />
+                        <p>douglas12345.dsm@gmail.com</p>
+                        <Icon icon="akar-icons:whatsapp-fill" height="1rem" />
+                        <p>+55 11 95305-5285</p>
+                    </span>
                 </div>
                 <picture>
                     <CirculoCmp
@@ -63,11 +70,29 @@
                     h5 {
                         color: var(--laranja);
                     }
+
+                    #contatos {
+                        display: flex;
+                        align-items: center;
+
+                        svg {
+                            margin-right: .5rem;
+                        }
+
+                        p {
+                            margin-right: 2rem;
+                        }
+                    }
                 }
 
                 picture {
                     width: 30%;
                     position: relative;
+
+                    #circulo {
+                        animation-name: slide-rigth;
+                        animation-duration: 2s;
+                    }
                 }
             }
 

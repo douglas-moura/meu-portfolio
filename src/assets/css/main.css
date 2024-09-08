@@ -76,12 +76,32 @@ body {
     border-radius: .5rem;
 }
 
-@keyframes fade-in {
+@keyframes slide-left {
     from {
         margin-left: -100%;
     }
 
     to {
         margin-left: 0;
+    }
+}
+
+@keyframes slide-rigth {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }

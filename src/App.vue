@@ -19,6 +19,8 @@
         width: 94%;
         padding: 1rem;
         float: right;
+        animation-name: fade-in;
+        animation-duration: 2s;
 
         section {
             width: 75%;
@@ -27,7 +29,5 @@
 
     aside {
         width: 6%;
-        animation-name: fade-in;
-        animation-duration: 2s;
     }
 </style>

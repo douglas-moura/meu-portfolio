@@ -2,22 +2,28 @@
     <aside>
         <section id="menu" class="box-sub" v-on:mouseenter="abrirMenu()" v-on:mouseleave="abrirMenu()">
             <nav id="links-nav">
+                <!--
                 <span id="infos-pessoais" class="box-sub">
                     <h3>Douglas Moura</h3>
                     <h5>_Desenvolvedor Web FrontEnd</h5>
                     <hr>
                 </span>
+                -->
                 <RouterLink to="/">
                     <vue-feather size="18" type="user"></vue-feather>
-                    <p class="textLink">Início</p>
+                    <p class="textLink">Sobre mim</p>
                 </RouterLink>
                 <RouterLink to="/habilidades">
-                    <vue-feather size="18" type="star"></vue-feather>
-                    <p class="textLink">Habilidades</p>
+                    <vue-feather size="18" type="code"></vue-feather>
+                    <p class="textLink">Minhas Habilidades</p>
                 </RouterLink>
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="folder"></vue-feather>
                     <p class="textLink">Projetos</p>
+                </RouterLink>
+                <RouterLink to="/projetos">
+                    <vue-feather size="18" type="layers"></vue-feather>
+                    <p class="textLink">Experiências</p>
                 </RouterLink>
             </nav>
             <div id="links-sociais">
@@ -52,20 +58,20 @@
                 iconeSocial[i].style.opacity = '0'
             }
             setTimeout(() => {
-                nome.style.opacity = '0'
-                nome.style.transform = 'scaleY(0)'
+                //nome.style.opacity = '0'
+                //nome.style.transform = 'scaleY(0)'
                 menu.style.minWidth = '50%'
             }, 300)
             setTimeout(() => {
                 menu.classList.remove('menu-aberto')
-                nome.style.display = 'none'
+                //nome.style.display = 'none'
             }, 350)
         } else {
             // abre menu
             menu.style.minWidth = '300%'
             setTimeout(() => {
                 menu.classList.add('menu-aberto')
-                nome.style.display = 'block'
+                //nome.style.display = 'block'
             }, 300)
             setTimeout(() => {
                 for(let i = 0; i < Object.keys(textLink).length; i++) {
@@ -76,8 +82,8 @@
                     iconeSocial[i].style.marginRight = '.5rem'
                     iconeSocial[i].style.opacity = '1'
                 }
-                nome.style.opacity = '1'
-                nome.style.transform = 'scaleY(1)'
+                //nome.style.opacity = '1'
+                //nome.style.transform = 'scaleY(1)'
             }, 350)
         }
     }
@@ -89,6 +95,8 @@
         flex-direction: row;
         height: calc(100dvh);
         align-items: center;
+        animation-name: slide-left;
+        animation-duration: 4s;
 
         section {
             transition: .3s;
@@ -161,6 +169,9 @@
             }
 
             #links-sociais {
+                width: fit-content;
+                display: flex;
+                
                 i {
                     border: .1rem solid var(--cinza-medio);
                     padding: .5rem;
@@ -198,9 +209,5 @@
                 }
             }
         }
-    }
-
-    header, nav {
-        flex-direction: column;
     }
 </style>
