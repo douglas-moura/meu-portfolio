@@ -10,11 +10,11 @@
     import PageFoot from '../src/components/layouts/PageFoot.vue'
 </script>
 
-<style>
+<style lang="scss">
     main, footer {
         width: 94%;
         float: right;
-        animation-name: fade-in;
+        animation-name: fadeIn;
         animation-duration: 2s;
     }
 
@@ -23,7 +23,7 @@
         padding: 4rem 2rem;
 
         section {
-            margin: auto;
+            margin: auto !important;
             width: 80%;
         }
     }

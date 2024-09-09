@@ -1,6 +1,6 @@
 <template>
     <aside>
-        <section id="menu" class="box-sub" v-on:mouseenter="abrirMenu()" v-on:mouseleave="abrirMenu()">
+        <section id="menu" :class="menuAberto.menu ? 'menu-aberto box-sub' : 'box-sub'" @mouseenter="abrirMenu()" @mouseleave="abrirMenu()">
             <nav id="links-nav">
                 <!--
                 <span id="infos-pessoais" class="box-sub">
@@ -11,26 +11,26 @@
                 -->
                 <RouterLink to="/">
                     <vue-feather size="18" type="user"></vue-feather>
-                    <p class="textLink">Sobre mim</p>
+                    <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Sobre mim</p>
                 </RouterLink>
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="folder"></vue-feather>
-                    <p class="textLink">Projetos</p>
+                    <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Projetos</p>
                 </RouterLink>
                 <RouterLink to="/habilidades">
                     <vue-feather size="18" type="code"></vue-feather>
-                    <p class="textLink">Minhas Habilidades</p>
+                    <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Minhas Habilidades</p>
                 </RouterLink>
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="layers"></vue-feather>
-                    <p class="textLink">Experiências</p>
+                    <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Experiências</p>
                 </RouterLink>
             </nav>
             <div id="links-sociais">
-                <vue-feather id="btn-mais" size="14" type="more-horizontal"></vue-feather>
-                <vue-feather class="btn-social" size="14" type="mail"></vue-feather>
-                <vue-feather class="btn-social" size="14" type="linkedin"></vue-feather>
-                <vue-feather class="btn-social" size="14" type="github"></vue-feather>
+                <vue-feather :class="menuAberto.icone ? 'btn-mais-aberto' : ''" id="btn-mais" size="14" type="more-horizontal"></vue-feather>
+                <vue-feather :class="menuAberto.icone ? 'btn-social-aberto btn-social' : 'btn-social'" size="14" type="mail"></vue-feather>
+                <vue-feather :class="menuAberto.icone ? 'btn-social-aberto btn-social' : 'btn-social'" size="14" type="linkedin"></vue-feather>
+                <vue-feather :class="menuAberto.icone ? 'btn-social-aberto btn-social' : 'btn-social'" size="14" type="github"></vue-feather>
             </div>
         </section>
     </aside>
@@ -38,106 +38,66 @@
 
 <script setup>
     import { RouterLink } from 'vue-router'
+    import { ref } from 'vue';
+
+    const menuAberto = ref({
+        menu: false,
+        link: false,
+        icone: false,
+    });
 
     //método
     function abrirMenu() {
         let menu = document.querySelector('section#menu')
-        let navBox = document.querySelector('nav#links-nav')
-        let nome = document.querySelector('span#infos-pessoais')
-        let textLink = document.getElementsByClassName('textLink')
-        let iconeSocial = document.getElementsByClassName('btn-social')
-
         if(menu.classList.contains('menu-aberto')) {
-            // fecha menu
-            for(let i = 0; i < Object.keys(textLink).length; i++) {
-                textLink[i].style.opacity = '0'
-                textLink[i].style.marginLeft = '0'
-            }
-            for(let i = 0; i < Object.keys(iconeSocial).length; i++) {
-                iconeSocial[i].style.marginRight = '-1rem'
-                iconeSocial[i].style.opacity = '0'
-            }
             setTimeout(() => {
-                //nome.style.opacity = '0'
-                //nome.style.transform = 'scaleY(0)'
-                menu.style.minWidth = '50%'
-            }, 300)
-            setTimeout(() => {
-                menu.classList.remove('menu-aberto')
-                //nome.style.display = 'none'
-            }, 350)
+                setTimeout(() => {
+                    menuAberto.value.link = false
+                    menuAberto.value.icone = false
+                }, 300)
+                setTimeout(() => {
+                    menu.style.minWidth = '5%'
+                }, 400)
+                menuAberto.value.menu = false
+            }, 500)
         } else {
-            // abre menu
-            menu.style.minWidth = '300%'
             setTimeout(() => {
-                menu.classList.add('menu-aberto')
-                //nome.style.display = 'block'
-            }, 300)
-            setTimeout(() => {
-                for(let i = 0; i < Object.keys(textLink).length; i++) {
-                    textLink[i].style.opacity = '1'
-                    textLink[i].style.marginLeft = '1rem'
-                }
-                for(let i = 0; i < Object.keys(iconeSocial).length; i++) {
-                    iconeSocial[i].style.marginRight = '.2rem'
-                    iconeSocial[i].style.opacity = '1'
-                }
-                //nome.style.opacity = '1'
-                //nome.style.transform = 'scaleY(1)'
-            }, 350)
+                menu.style.minWidth = '300%'
+                setTimeout(() => {
+                    menuAberto.value.menu = true
+                }, 300)
+                setTimeout(() => {
+                    menuAberto.value.link = true
+                    menuAberto.value.icone = true
+                }, 400)
+            }, 500)
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     aside {
         position: fixed;
         flex-direction: row;
         height: calc(100dvh);
-        align-items: center;
-        animation-name: slide-left;
-        animation-duration: 4s;
+        justify-content: center;
+        animation-name: slideLeft;
+        animation-duration: 2s;
 
-        section {
+        #menu {
+            transition: .2s;
+            position: absolute;
             transition: .3s;
-            min-width: 50%;
+            min-width: 5%;
             min-height: 60dvh;
             max-height: 60dvh;
-            background-color: var(--branco);
+            background-color: $branco;
             margin: auto 1rem;
             justify-content: space-between;
-            box-shadow: 0 3rem 7rem var(--sombra);
-
-            &:hover {
-                div {
-                    display: block;
-                }
-            }
+            box-shadow: 0 3rem 7rem $sombra;
             
-            #links-nav {     
-                transition: .2s;    
+            #links-nav {  
                 margin-bottom: 4rem;
-                transition: .2s;
-
-                #infos-pessoais {
-                    transition: .2s;
-                    display: none;
-                    opacity: 0;
-                    transform: scaleY(0);
-                    transform-origin: top;
-                    margin-bottom: 2rem;
-    
-                    h5 {
-                        color: var(--laranja);
-                        font-weight: 400;
-                    }
-    
-                    hr {
-                        margin-top: .5rem;
-                        border: .05rem solid var(--cinza-claro);
-                        width: 80%;
-                    }
-                }
 
                 a {
                     min-height: 1rem;
@@ -147,19 +107,18 @@
                     margin-bottom: .5rem;
 
                     &:hover {
-                        background-color: var(--cinza-claro);
+                        background-color: $cinza-claro;
 
                         i {
-                            color: var(--cinza-escuro);
+                            color: $cinza-escuro;
                         }
                     }
 
                     i {
-                        color: var(--laranja);
+                        color: $laranja;
                     }
 
                     p {
-                        transition: .2s;
                         display: none;
                         font-size: .8rem;
                         margin-left: .5rem;
@@ -173,41 +132,49 @@
                 display: flex;
                 
                 i {
-                    border: .1rem solid var(--branco);
+                    border: .1rem solid $branco;
                     padding: .5rem;
                     border-radius: 50%;
-                    color: var(--cinza-medio);
+                    color: $cinza-medio;
                 }
 
                 .btn-social {
                     opacity: 0;
                     display: none;
                     margin-right: -1rem;
-                    transition: .2s;
                 }
             }
         }
 
+        //MENU ABERTO
         .menu-aberto {
-            position: absolute;
-
             #links-nav {
                 a {
                     p {
-                        display: block;
+                        display: block !important;
                     }
                 }
             }
 
             #links-sociais {
                 #btn-mais {
-                    display: none;
+                    display: none !important;
                 }
 
                 .btn-social {
-                    display: inline-block;
+                    display: inline-block !important;
                 }
             }
+        }
+
+        .text-link-aberto {
+            opacity: 1 !important;
+            margin-left: 1rem !important;
+        }
+
+        .btn-social-aberto {
+            opacity: 1 !important;
+            margin-right: .2rem !important;
         }
     }
 </style>

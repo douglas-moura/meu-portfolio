@@ -18,24 +18,24 @@
     })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     #circulo {
         width: 100%;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        border: .1rem solid var(--branco);
+        border: .1rem solid $branco;
     }
 
     .cinza {
-        border: .1rem solid var(--cinza-medio) !important;
+        border: .1rem solid $cinza-medio !important;
         opacity: .15;
     }
 
     .laranja {
-        border: .1rem solid var(--laranja) !important;
+        border: .1rem solid $laranja !important;
     }
 
     .preto {
-        border: .1rem solid var(--cinza-escuro) !important;
+        border: .1rem solid $cinza-escuro !important;
     }
 </style>

@@ -15,16 +15,16 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     #bloco-projeto {
-        background-color: var(--branco);
+        background-color: $branco;
         width: 100% !important;
         margin: 0 !important;
         margin-bottom: 2rem !important;
 
         div {
             picture {
-                background-color: var(--cinza-escuro);
+                background-color: $cinza-escuro;
                 width: 100%;
                 aspect-ratio: 1 / .5;
                 width: 50%;

@@ -16,7 +16,7 @@
     })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     img {
         width: 100%;
         aspect-ratio: 1 / 1;

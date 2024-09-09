@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+$branco: #fff;
+$cinza-claro: #eee;
+$cinza-medio: #686d76;
+$cinza-escuro: #373a40;
+$laranja: #dc5f00;
+$laranja-claro: #ffdec4;
+$sombra: rgba(104, 109, 118, .5);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $cinza-claro;
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: $cinza-escuro !important;
+    
+    aside { z-index: 999; }
+    main {
+        z-index: 998;
+        position: relative;
+        overflow: hidden;
+    }
+
+    main, header, aside, nav, section, a  {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $cinza-escuro !important;
+        flex-direction: row !important;
+
+        p {
+            margin-left: 1rem;
+        }
+    }
+
+    i {
+        cursor: pointer;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        
+        >div {
+            width: 100% !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+.box-sup {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.box-sub {
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-300%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideRigth {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

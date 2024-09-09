@@ -51,7 +51,7 @@
     import { Icon } from '@iconify/vue'
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     #pag-home {
         section {
             width: 70%;
@@ -65,7 +65,7 @@
                     width: 60%;
 
                     h5 {
-                        color: var(--laranja);
+                        color: $laranja;
                     }
 
                     #contatos {
@@ -87,7 +87,7 @@
                     position: relative;
 
                     #circulo {
-                        animation-name: slide-rigth;
+                        animation-name: slideRigth;
                         animation-duration: 2s;
                     }
                 }

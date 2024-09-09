@@ -29,12 +29,12 @@
     import CirculoCmp from '@/components/layouts/CirculoCmp.vue'
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     footer {
         text-align: center;
 
         h6 {
-            color: var(--cinza-medio);
+            color: $cinza-medio;
             font-weight: 500;
             margin: auto 0;
         }
