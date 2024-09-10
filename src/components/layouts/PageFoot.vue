@@ -26,12 +26,14 @@
 </template>
 
 <script setup>
-    import CirculoCmp from '@/components/layouts/CirculoCmp.vue'
+    import CirculoCmp from '@/components/partials/CirculoCmp.vue'
 </script>
 
 <style scoped lang="scss">
     footer {
         text-align: center;
+        min-height: 5dvh;
+        padding: 0 2rem;
 
         h6 {
             color: $cinza-medio;

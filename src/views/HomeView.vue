@@ -24,7 +24,7 @@
                         cor="laranja"
                     />
                     <ImagemCmp
-                        src="foto-perfil-2"
+                        src="foto-perfil"
                         formato="redondo"
                         textoAlt="Minha Foto"
                     />
@@ -46,8 +46,8 @@
 </template>
 
 <script setup>
-    import ImagemCmp from '@/components/layouts/ImagemCmp.vue'
-    import CirculoCmp from '@/components/layouts/CirculoCmp.vue'
+    import ImagemCmp from '@/components/partials/ImagemCmp.vue'
+    import CirculoCmp from '@/components/partials/CirculoCmp.vue'
     import { Icon } from '@iconify/vue'
 </script>
 
@@ -63,10 +63,6 @@
                     justify-content: center;
                     position: relative;
                     width: 60%;
-
-                    h5 {
-                        color: $laranja;
-                    }
 
                     #contatos {
                         display: flex;

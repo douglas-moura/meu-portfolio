@@ -1,7 +1,7 @@
 <template>
     <img
         :src="'src/assets/img/' + src + '.jpg'"
-        :class="formato == 'redondo' ? 'redondo' : 'quadrado'"
+        :class="formato"
         :alt="textoAlt"
     >
 </template>
@@ -19,15 +19,16 @@
 <style scoped lang="scss">
     img {
         width: 100%;
-        aspect-ratio: 1 / 1;
         object-fit: cover;
     }
-
+    
     .redondo {
+        aspect-ratio: 1 / 1;
         border-radius: 50% !important;
     }
 
     .quadrado {
+        aspect-ratio: 1 / 1;
         border-radius: 1rem;
     }
 </style>

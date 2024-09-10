@@ -1,14 +1,7 @@
 <template>
     <aside>
-        <section id="menu" :class="menuAberto.menu ? 'menu-aberto box-sub' : 'box-sub'" @mouseenter="abrirMenu()" @mouseleave="abrirMenu()">
+        <section id="menu" :class="menuAberto.menu ? 'menu-aberto sombra' : 'sombra'" @mouseenter="abrirMenu()" @mouseleave="abrirMenu()">
             <nav id="links-nav">
-                <!--
-                <span id="infos-pessoais" class="box-sub">
-                    <h3>Douglas Moura</h3>
-                    <h5>_Desenvolvedor Web FrontEnd</h5>
-                    <hr>
-                </span>
-                -->
                 <RouterLink to="/">
                     <vue-feather size="18" type="user"></vue-feather>
                     <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Sobre mim</p>
@@ -54,12 +47,10 @@
                 setTimeout(() => {
                     menuAberto.value.link = false
                     menuAberto.value.icone = false
-                }, 300)
-                setTimeout(() => {
                     menu.style.minWidth = '5%'
-                }, 400)
+                }, 300)
                 menuAberto.value.menu = false
-            }, 500)
+            }, 350)
         } else {
             setTimeout(() => {
                 menu.style.minWidth = '300%'
@@ -69,8 +60,8 @@
                 setTimeout(() => {
                     menuAberto.value.link = true
                     menuAberto.value.icone = true
-                }, 400)
-            }, 500)
+                }, 350)
+            }, 400)
         }
     }
 </script>
@@ -85,16 +76,16 @@
         animation-duration: 2s;
 
         #menu {
-            transition: .2s;
             position: absolute;
-            transition: .3s;
+            transition: all .3s;
             min-width: 5%;
             min-height: 60dvh;
             max-height: 60dvh;
             background-color: $branco;
             margin: auto 1rem;
             justify-content: space-between;
-            box-shadow: 0 3rem 7rem $sombra;
+            padding: .5rem !important;
+            border-radius: .5rem !important;
             
             #links-nav {  
                 margin-bottom: 4rem;
@@ -105,24 +96,21 @@
                     align-items: center;
                     border-radius: .25rem;
                     margin-bottom: .5rem;
+                    transition: background-color 0.3s ease;
 
                     &:hover {
                         background-color: $cinza-claro;
-
-                        i {
-                            color: $cinza-escuro;
-                        }
+                        i { color: $cinza-escuro; }
                     }
 
-                    i {
-                        color: $laranja;
-                    }
+                    i { color: $laranja; }
 
                     p {
                         display: none;
                         font-size: .8rem;
                         margin-left: .5rem;
                         opacity: 0;
+                        transition: all 0.3s ease;
                     }
                 }
             }
@@ -142,6 +130,7 @@
                     opacity: 0;
                     display: none;
                     margin-right: -1rem;
+                    transition: all 0.3s ease;
                 }
             }
         }
