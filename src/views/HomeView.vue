@@ -37,7 +37,7 @@
                 <span><Icon icon="akar-icons:vue-fill" /></span>
                 <span><Icon icon="akar-icons:sass-fill" /></span>
                 <span><Icon icon="akar-icons:php-fill" /></span>
-                <span><Icon icon="akar-icons:data" /></span>
+                <span><Icon icon="bi:filetype-sql" /></span>
                 <span><Icon icon="akar-icons:vscode-fill" /></span>
                 <span><Icon icon="akar-icons:github-fill" /></span>
             </div>

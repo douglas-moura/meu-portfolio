@@ -1,6 +1,6 @@
 <template>
-    <section id="bloco-projeto" @mouseenter="mostrarProjeto()" @mouseleave="ocultaProjeto()">
-        <div :class="!ativo ? 'infosOculto' : ''">
+    <section id="bloco-projeto" @mouseenter="mostrarFlip()" @mouseleave="ocultaFlip()">
+        <div :class="!flipAtivo ? 'btnOculto' : ''">
             <div>
                 <h5>Março 2024</h5>
                 <h2>Nome do Projeto</h2>
@@ -13,21 +13,36 @@
                 </span>
             </div>
         </div>
-        <button v-show="!ativo">
-            Ver mais
-        </button>
-    </section>    
+        {{ console.log(flipAtivo) }}
+        <BotaoPadrao
+            v-show="!flipAtivo"
+            btnTexto="Ver mais"
+            @click="abrirProjeto()"
+        />
+    </section>  
 </template>
 
 <script setup>
     import { Icon } from '@iconify/vue'
     import { ref } from 'vue'
+    import BotaoPadrao from './BotaoPadrao.vue'
 
-    const ativo = ref(true)
+    //dados
+    const flipAtivo = ref(true)
+
+    //emitt
+    const emit = defineEmits(['exibirProjeto'])
 
     //métodos
-    function mostrarProjeto() { ativo.value = false }
-    function ocultaProjeto() { ativo.value = true }
+    function mostrarFlip() {
+        flipAtivo.value = false
+    }
+    function ocultaFlip() {
+        flipAtivo.value = true
+    }
+    function abrirProjeto() {
+        emit('exibirProjeto')
+    }
 </script>
 
 <style scoped lang="scss">
@@ -81,26 +96,13 @@
             }
         }
 
-        .infosOculto {
+        .btnOculto {
             opacity: .5;
             
             div {
                 opacity: 0;
                 transform: scale(.5);
             }
-        }
-
-        button {
-            margin: auto;
-            font-size: 1rem;
-            font-weight: 700;
-            padding: 1rem 2rem;
-            border-radius: .5rem;
-            border: .2rem solid white;
-            color: white;
-            background-color: rgba(#000, .5);
-            position: absolute;
-            cursor: pointer;
         }
     }
 </style>
