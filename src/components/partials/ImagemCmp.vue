@@ -29,6 +29,6 @@
 
     .quadrado {
         aspect-ratio: 1 / 1;
-        border-radius: 1rem;
+        border-radius: 1rem !important; 
     }
 </style>

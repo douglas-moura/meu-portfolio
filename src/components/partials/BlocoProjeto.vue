@@ -41,14 +41,14 @@
         background-image: url('../../assets/img/site-1.jpg');
         background-size: cover;
         background-position: center top;
-        min-height: 40rem;
+        min-height: 30rem;
         justify-content: center;
         align-items: center;
         
         >div {
             background-image: linear-gradient(rgba(#000, .8), rgba(#000, .6));
             height: 100%;
-            padding: 6rem;
+            padding: 3rem;
             backdrop-filter: blur(15px);
             transition: .3s;
 
