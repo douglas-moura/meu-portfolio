@@ -34,12 +34,14 @@
                 <span><Icon icon="akar-icons:html-fill" /></span>
                 <span><Icon icon="akar-icons:css-fill" /></span>
                 <span><Icon icon="akar-icons:javascript-fill" /></span>
-                <span><Icon icon="akar-icons:vue-fill" /></span>
                 <span><Icon icon="akar-icons:sass-fill" /></span>
+                <span><Icon icon="akar-icons:vue-fill" /></span>
+                <!--
                 <span><Icon icon="akar-icons:php-fill" /></span>
                 <span><Icon icon="bi:filetype-sql" /></span>
                 <span><Icon icon="akar-icons:vscode-fill" /></span>
                 <span><Icon icon="akar-icons:github-fill" /></span>
+                -->
             </div>
         </section>
     </main>
@@ -91,7 +93,7 @@
 
             #tecnologias {
                 margin-top: 2rem;
-                width: 65% !important;
+                width: 35% !important;
 
                 span {
                     svg {

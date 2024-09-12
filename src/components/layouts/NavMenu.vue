@@ -14,10 +14,12 @@
                     <vue-feather size="18" type="code"></vue-feather>
                     <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Minhas Habilidades</p>
                 </RouterLink>
+                <!--
                 <RouterLink to="/projetos">
                     <vue-feather size="18" type="layers"></vue-feather>
                     <p :class="menuAberto.link ? 'text-link-aberto text-link' : 'text-link'">Experiências</p>
                 </RouterLink>
+                -->
             </nav>
             <div id="links-sociais">
                 <vue-feather :class="menuAberto.icone ? 'btn-mais-aberto' : ''" id="btn-mais" size="14" type="more-horizontal"></vue-feather>

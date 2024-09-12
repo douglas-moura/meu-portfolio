@@ -68,7 +68,7 @@
 
     //lifeCycle
     onMounted(() => {
-        console.log('montado')
+        //console.log('montado')
     })
     
     //emitt

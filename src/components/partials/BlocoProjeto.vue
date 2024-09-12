@@ -3,17 +3,17 @@
         <div :class="!flipAtivo ? 'btnOculto' : ''">
             <div>
                 <h5>Março 2024</h5>
-                <h2>Nome do Projeto</h2>
+                <h2>{{ props.titulo }}</h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis omnis explicabo corporis consectetur eos in quas, deleniti officiis blanditiis corrupti totam perspiciatis molestias amet nulla sequi facilis voluptate officia.</p>
+                <p>{{ props.descr }}</p>
                 <span>
-                    <Icon icon="akar-icons:github-fill" />
-                    <Icon icon="akar-icons:github-fill" />
-                    <Icon icon="akar-icons:github-fill" />
+                    <Icon
+                        v-for="tec in tecnicasProjeto" :key="tec.id"
+                        :icon="tec.icone"
+                    />
                 </span>
             </div>
         </div>
-        {{ console.log(flipAtivo) }}
         <BotaoPadrao
             v-show="!flipAtivo"
             btnTexto="Ver mais"
@@ -24,14 +24,24 @@
 
 <script setup>
     import { Icon } from '@iconify/vue'
-    import { ref } from 'vue'
+    import { onMounted, ref } from 'vue'
     import BotaoPadrao from './BotaoPadrao.vue'
+    import axios from 'axios'
 
     //dados
     const flipAtivo = ref(true)
+    const tecnicasGeral = ref([])
+    const tecnicasProjeto = ref([])
 
     //emitt
     const emit = defineEmits(['exibirProjeto'])
+
+    //props
+    const props = defineProps({
+        titulo: String,
+        descr: String,
+        tecs: Array
+    })
 
     //métodos
     function mostrarFlip() {
@@ -43,6 +53,31 @@
     function abrirProjeto() {
         emit('exibirProjeto')
     }
+    const getTecnologias = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000/conhecimentos')
+            tecnicasGeral.value = response.data
+            montaTecnologias()
+        } catch(error) {
+            console.error("Erro ao buscar os dados:", error);
+        }
+    }
+    function montaTecnologias() {
+        if(props.tecs) {
+            for(let i = 0; i < props.tecs.length; i++) {
+                for(let t = 0; t < tecnicasGeral.value.length; t++) {
+                    if(props.tecs[i] == tecnicasGeral.value[t].id) {
+                        tecnicasProjeto.value.push(tecnicasGeral.value[t])
+                    }
+                }
+            }
+        }
+    }
+
+    //lifecycle
+    onMounted(() => {
+        getTecnologias()
+    })
 </script>
 
 <style scoped lang="scss">
@@ -83,8 +118,8 @@
     
                 span {    
                     svg {
-                        height: 1.5rem;
-                        width: 1.5rem;
+                        height: 2rem;
+                        width: 2rem;
                         margin-right: 1rem;
                     }
                 }
