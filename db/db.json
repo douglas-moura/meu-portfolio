@@ -2,66 +2,68 @@
     "projetos": [
         { 
             "id": "1",
+            "periodo": 2023,
             "title": "GTX100",
-            "desc": "Site Institucional",
-            "tecnologias": [
-                1, 2, 4, 6
-            ],
+            "desc": "O projeto do site institucional da GTX100 tem como objetivo criar uma presença online profissional e responsiva que reflita a identidade da empresa. O site funcionará como um ponto de contato para clientes e parceiros, oferecendo informações sobre a empresa, seus serviços e produtos, e garantindo uma navegação eficiente.",
+            "tipo": "Site Institucional",
+            "link": "https://gtx100.com.br/",
+            "tecnologias": [1, 2, 4, 6],
             "imagens" : [
                 {
-                    
+                    "pasta": "gtx",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
         },
         { 
             "id": "2",
+            "periodo": 2022 ,
             "title": "SPWorking",
             "desc": "Site Institucional",
-            "tecnologias": [
-                1, 2, 3, 4
-            ],
+            "tecnologias": [1, 2, 3, 4],
             "imagens" : [
                 {
-                    
+                    "pasta": "spw",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
         },
         { 
             "id": "3",
+            "periodo": 2023,
             "title": "InfinithTech",
             "desc": "Site Institucional",
-            "tecnologias": [
-                2, 8
-            ],
+            "tecnologias": [2, 8],
             "imagens" : [
                 {
-
+                    "pasta": "inf",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
         },
         { 
             "id": "4",
+            "periodo": 2019,
             "title": "Allons-Y",
             "desc": "Site Institucional",
-            "tecnologias": [
-                2, 8
-            ],
+            "tecnologias": [2, 8],
             "imagens" : [
                 {
-                    
+                    "pasta": "all",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
         },
         { 
             "id": "5",
+            "periodo": 2024,
             "title": "Agro e Solar",
             "desc": "Site Institucional",
-            "tecnologias": [
-                1, 2, 3, 4, 6
-            ],
+            "tecnologias": [1, 2, 3, 4, 6],
             "imagens" : [
                 {
-                    
+                    "pasta": "agr",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
         }

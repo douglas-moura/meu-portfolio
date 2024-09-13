@@ -114,8 +114,8 @@ body {
 }
 
 .pop-up {
-    background-color: rgba(#000, .6);
-    backdrop-filter: blur(20px);
+    background-color: rgba(#fff, .5) !important;
+    backdrop-filter: blur(30px);
     width: 100%;
     height: 100%;
     top: 0;
@@ -124,10 +124,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .2s;
+    animation-name: fadeIn;
+    animation-duration: .4s;
 }
 
 .grade {
-    flex-wrap: wrap;
+    display: grid !important;
+    grid-template-columns: 32% 32% 32%;
 }
 
 .sombra {
@@ -209,6 +213,16 @@ body {
 
     to {
         margin-left: 0;
+    }
+}
+
+@keyframes slideTop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
 

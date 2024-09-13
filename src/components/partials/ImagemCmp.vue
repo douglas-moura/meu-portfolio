@@ -7,8 +7,6 @@
 </template>
 
 <script setup>
-    import { defineProps } from 'vue'
-
     defineProps({
         src: String,
         formato: String,
@@ -29,6 +27,7 @@
 
     .quadrado {
         aspect-ratio: 1 / 1;
-        border-radius: 1rem !important; 
+        border-radius: .5rem !important;
+        object-position: top;
     }
 </style>

@@ -1,51 +1,46 @@
 <template>
     <div class="pop-up">
-        <section id="projeto-aberto" class="">
+        <section id="projeto-aberto" :class="oculto ? 'ocultar' : ''">
+            <span>
+                <Icon icon="akar-icons:circle-x" @click="fecharProjeto()" />
+            </span>
             <div class="conteudo">
                 <div class="col-30 projeto-infos">
-                    <h2>Nome Projeto</h2>
+                    <h2>{{ infoProjeto.titulo }}</h2>
                     <br>
+                    <p>{{ infoProjeto.tipo }}</p>
+                    <hr>
                     <ul>
-                        <li>Informação</li>
+                        <li>{{ infoProjeto.descr }}</li>
                     </ul>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="acessar-projeto">
+                        <Icon icon="akar-icons:arrow-right" />
+                        <a :href="infoProjeto.link" target="_blank">Acesse</a>
+                    </p>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <hr>
-                    <h4>Tecnologias:</h4>
-                    <ul>
-                        <li>Tecnologia</li>
-                        <li>Tecnologia</li>
-                        <li>Tecnologia</li>
+                    <h4>Tecnologias Usadas:</h4>
+                    <ul id="tecs-lista">
+                        <li v-for="tec in tecsProjeto" :key="tec.id">
+                            <Icon :icon="tec.icone" />
+                            {{ tec.nome }}
+                        </li>
                     </ul>
                 </div>
                 <section class="col-70 box-sub projeto-galeria">
-                    <span>
-                        <Icon icon="akar-icons:circle-x" @click="fecharProjeto()" />
-                    </span>
                     <div>
                         <div class="col-90 galeria-principal">
-                            <picture>
+                            <picture v-if="infoProjeto && infoProjeto.imgs && infoProjeto.imgs.length > 0 && infoProjeto.imgs[0].arquivos && infoProjeto.imgs[0].arquivos.length > 0">
                                 <ImagemCmp
-                                    src="site-1"
+                                    :src="getImagePath(infoProjeto.imgs[0].pasta, imgAberta)"
                                 />
                             </picture>
                         </div>
-                        <div class="col-10 galeria-minis">
-                            <picture>
+                        <div class="col-10 galeria-minis" v-if="infoProjeto.imgs && infoProjeto.imgs.length && infoProjeto.imgs[0].arquivos.length">
+                            <picture v-for="(arquivo, index) in infoProjeto.imgs[0].arquivos" :key="index" >
                                 <ImagemCmp
-                                    src="site-1"
-                                />
-                            </picture>
-                            <picture>
-                                <ImagemCmp
-                                    src="site-1"
-                                />
-                            </picture>
-                            <picture>
-                                <ImagemCmp
-                                    src="site-1"
+                                    :src="getImagePath(infoProjeto.imgs[0].pasta, arquivo)" :alt="'Imagem ' + index"
+                                    @click="abrirImagem(arquivo)"                             
                                 />
                             </picture>
                         </div>
@@ -57,49 +52,80 @@
 </template>
 
 <script setup>
-    import { onMounted } from 'vue'
     import { Icon } from '@iconify/vue'
+    import { ref } from 'vue'
     import ImagemCmp from '@/components/partials/ImagemCmp.vue'
+    
+    //dados
+    const oculto = ref(false)
+    const imgAberta = ref(1)
 
     //props
     defineProps({
-        statusPopup: Boolean
+        infoProjeto: Object,
+        tecsProjeto: Object
     })
 
-    //lifeCycle
-    onMounted(() => {
-        //console.log('montado')
-    })
-    
     //emitt
     const emit = defineEmits(['ocultarProjeto'])
 
     //métodos
     function fecharProjeto() {
-        emit('ocultarProjeto')
+        oculto.value = true
+        setTimeout(() => {
+            oculto.value = false
+            imgAberta.value = 1
+            emit('ocultarProjeto')
+        }, 500)
+    }
+    function getImagePath(pasta, arquivo) {
+        return `projetos/${pasta}/${arquivo}`
+    }
+    function abrirImagem(img) {
+        imgAberta.value = img
     }
 </script>
 
 <style lang="scss" scoped>
     #projeto-aberto {
-        height: 35rem;
-        aspect-ratio: 1 / .5;
+        cursor: auto;
+        width: 60%;
+        height: 80%;
         margin: auto !important;
         position: fixed;
         border-radius: 1rem;
         overflow: hidden;
-        background-color: $branco;
+        background-color: rgba($cinza-escuro, .7);
         border: .2rem solid $branco;
-        
+        animation-name: slideTop;
+        animation-duration: .8s;
+        transition: .4s;
+                
+        span {
+            height: 3rem;
+            background-color: $preto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            svg {
+                color: $laranja;
+                height: 2rem;
+                width: 2rem;
+                margin: .5rem;
+            }
+        }
+
         .conteudo {
             overflow: hidden;
+            height: calc(95% - 4rem);
+            margin: 1rem !important;
             
-            >div {
-                height: 100% !important;
+            div, section {
+                height: 100%;
             }
-    
+            
             .projeto-infos {
-                background-color: $preto;
                 padding: 2rem;
                 color: $cinza-claro;
 
@@ -107,57 +133,78 @@
                     margin: 1rem 0;
                     border: .1rem solid $cinza-medio;
                 }
-            }
-            
-            .projeto-galeria {
-                span {
-                    height: 3rem;
+
+                .acessar-projeto {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: flex-end;
+                    align-items: center;
+                    
+                    a {
+                        font-size: 1rem;
+                        color: $cinza-claro !important;
+                    }
 
                     svg {
-                        color: $laranja;
+                        margin: 0 .5rem !important;
                         height: 1.5rem;
                         width: 1.5rem;
                     }
                 }
 
+                #tecs-lista {
+                    li {
+                        margin-top: .5rem !important;
+                        display: flex;
+                        align-items: center;
+                        line-height: 2rem;
+
+                        svg {
+                            margin-right: .5rem;
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+                    }
+                }
+            }
+            
+            .projeto-galeria {
                 div {
-                    height: calc(100% - 3rem);
-                    
+
                     >div {
                         overflow-y: scroll;
                         overflow-x: hidden;
-                        height: 100%;
-                        
                     }
                     
                     .galeria-minis {
                         padding-right: .25rem;
 
+                        &::-webkit-scrollbar-thumb {
+                            background: $laranja !important; 
+                        }
+                        
                         picture {
                             opacity: .5;
-                            cursor: pointer;
+                            cursor: pointer !important;
                             transition: .1s;
-                            border: .1rem solid $cinza-medio;
+                            border: .2rem solid $cinza-claro;
                             border-radius: .25rem;
+                            aspect-ratio: 1 / 2;
                             overflow: hidden;
 
                             &:not(:last-child) {
-                                margin-bottom: .5rem;
+                                margin-bottom: 1rem;
                             }
 
                             &:hover {
                                 opacity: 1;
-                            }
+                            }    
                         }
                     }
                     
                     .galeria-principal {
                         border-radius: .5rem !important;
-                        border: .2rem solid $cinza-claro;
-                        
+                        border: .2rem solid $cinza-medio;
+                        cursor: pointer !important;
+
                         &::-webkit-scrollbar {
                             width: 0 !important;
                         }
@@ -165,5 +212,9 @@
                 }
             }
         }
+    }
+
+    .ocultar {
+        transform: translateY(-300%);
     }
 </style>

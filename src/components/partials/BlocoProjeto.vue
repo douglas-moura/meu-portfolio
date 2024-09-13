@@ -1,8 +1,19 @@
-<template>
-    <section id="bloco-projeto" @mouseenter="mostrarFlip()" @mouseleave="ocultaFlip()">
+<template>   
+    <section
+        v-if="props
+        && props.imgs
+        && props.imgs.length > 0
+        && props.imgs[0].arquivos
+        && props.imgs[0].arquivos.length > 0"
+        :style="'background-image: url(' + getImagePath(props.imgs[0].pasta, 1) + '.jpg);'"
+        @mouseenter="mostrarFlip()"
+        @mouseleave="ocultaFlip()"
+        id="bloco-projeto"
+        class="col-100"
+    >
         <div :class="!flipAtivo ? 'btnOculto' : ''">
             <div>
-                <h5>Março 2024</h5>
+                <h5>{{ props.periodo }}</h5>
                 <h2>{{ props.titulo }}</h2>
                 <hr>
                 <p>{{ props.descr }}</p>
@@ -15,43 +26,54 @@
             </div>
         </div>
         <BotaoPadrao
+            @click="abrirProjeto()"
             v-show="!flipAtivo"
             btnTexto="Ver mais"
-            @click="abrirProjeto()"
         />
-    </section>  
+        <span>
+            <ProjetoDetalhes
+                @ocultarProjeto="abrirProjeto"
+                v-show="projetoAberto"
+                :infoProjeto = props
+                :tecsProjeto = tecnicasProjeto
+            />
+        </span>
+    </section>
 </template>
 
 <script setup>
     import { Icon } from '@iconify/vue'
     import { onMounted, ref } from 'vue'
     import BotaoPadrao from './BotaoPadrao.vue'
+    import ProjetoDetalhes from '@/components/layouts/ProjetoDetalhes.vue'
     import axios from 'axios'
 
     //dados
     const flipAtivo = ref(true)
     const tecnicasGeral = ref([])
     const tecnicasProjeto = ref([])
-
-    //emitt
-    const emit = defineEmits(['exibirProjeto'])
+    const projetoAberto = ref(false)
 
     //props
     const props = defineProps({
         titulo: String,
         descr: String,
-        tecs: Array
+        tecs: Object,
+        periodo: Number,
+        imgs: Object,
+        link: String,
+        tipo: String
     })
 
     //métodos
+    function abrirProjeto() {
+        projetoAberto.value = !projetoAberto.value
+    }
     function mostrarFlip() {
         flipAtivo.value = false
     }
     function ocultaFlip() {
         flipAtivo.value = true
-    }
-    function abrirProjeto() {
-        emit('exibirProjeto')
     }
     const getTecnologias = async () => {
         try {
@@ -73,6 +95,9 @@
             }
         }
     }
+    function getImagePath(pasta, arquivo) {
+        return `../src/assets/img/projetos/${pasta}/${arquivo}`
+    }
 
     //lifecycle
     onMounted(() => {
@@ -87,8 +112,8 @@
         margin-top: 3rem !important;
         border-radius: 1rem;
         overflow: hidden;
-        background-color: $branco;
         background-image: url('../../assets/img/site-1.jpg');
+        background-color: $branco;
         background-size: cover;
         background-position: center top;
         min-height: 30rem;
@@ -96,10 +121,10 @@
         align-items: center;
         
         >div {
-            background-image: linear-gradient(rgba(#000, .8), rgba(#000, .6));
+            background-image: linear-gradient(rgba(#000, .8), rgba(#000, .3));
             height: 100%;
             padding: 3rem;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
             transition: .3s;
 
             div {
@@ -132,7 +157,7 @@
         }
 
         .btnOculto {
-            opacity: .5;
+            opacity: .3;
             
             div {
                 opacity: 0;

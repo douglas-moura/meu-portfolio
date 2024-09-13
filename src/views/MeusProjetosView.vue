@@ -4,44 +4,45 @@
             <h1>Projetos</h1>
             <div class="grade">
                 <BlocoProjeto
-                    class="col-33"
-                    @exibirProjeto="mostrarProjeto"
                     v-for="projeto in meusProjetos" :key="projeto.id"
 
+                    :periodo="projeto.periodo"
                     :titulo="projeto.title"
                     :descr="projeto.desc"
+                    :tipo="projeto.tipo"
+                    :link="projeto.link"
                     :tecs="projeto.tecnologias"
+                    :imgs="projeto.imagens"
                 />
+                <!--
                 <BlocoProjeto
                     v-show="qtd == 2"
-                    :class="qtd == 2 ? 'col-33 oculto' : 'oculto'"
-                    @exibirProjeto="mostrarProjeto"
+                    titulo="blank"
                 />
+                -->
             </div>
         </section>
     </main>
+    <!--
     <ProjetoDetalhes
         v-if="projetoAberto"
         @ocultarProjeto="mostrarProjeto"
         :statusPopup=projetoAberto
     />
+    -->
 </template>
 
 <script setup>
     import BlocoProjeto from '@/components/partials/BlocoProjeto.vue'
-    import ProjetoDetalhes from '@/components/layouts/ProjetoDetalhes.vue'
+    //import ProjetoDetalhes from '@/components/layouts/ProjetoDetalhes.vue'
     import { onMounted, ref } from 'vue'
     import axios from 'axios'
 
     //dados
-    const projetoAberto = ref(false)
     const meusProjetos = ref([])
     const qtd = ref(0)
     
     //métodos
-    function mostrarProjeto() {
-        projetoAberto.value = !projetoAberto.value
-    }
     const getProjetos = async () => {
         try {
             const response = await axios.get('http://localhost:3000/projetos')
