@@ -115,18 +115,18 @@
                     margin-bottom: 2rem;
                     padding-right: 1rem;
                 }
-    
-                span {    
-                    svg {
-                        height: 2rem;
-                        width: 2rem;
-                        margin-right: 1rem;
-                    }
-                }
 
                 hr {
                     margin: 1rem 0;
                     border: .1rem solid $laranja
+                }
+    
+                span {
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        margin-right: 1rem;
+                    }
                 }
             }
         }

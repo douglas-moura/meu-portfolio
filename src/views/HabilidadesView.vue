@@ -3,7 +3,7 @@
         <section>
             <h1>Habilidades</h1>
             <h2 class="col-80">Front-End</h2>
-            <div class="grade col-70">
+            <div class="grade col-100">
                 <span class="col-20">
                     <Icon icon="akar-icons:html-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
@@ -37,7 +37,7 @@
                 <span class="col-20 bloco-invisivel"></span>
             </div>
             <h2 class="col-80">Back-End</h2>
-            <div class="grade col-70">
+            <div class="grade col-100">
                 <span class="col-20">
                     <Icon icon="akar-icons:php-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
@@ -54,7 +54,7 @@
                 <span class="col-20 bloco-invisivel"></span>
             </div>
             <h2 class="col-80">Softwares</h2>
-            <div class="grade col-70">
+            <div class="grade col-100">
                 <span class="col-20">
                     <Icon icon="akar-icons:vscode-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
@@ -77,7 +77,7 @@
                 </span>
             </div>
             <h2 class="col-80">Outros Conhecimentos</h2>
-            <div class="grade col-70">
+            <div class="grade col-100">
                 <span class="col-20">
                     <Icon icon="devicon-plain:wordpress-wordmark" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
@@ -131,7 +131,11 @@
                     svg {
                         height: 3rem;
                         width: 3rem;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        font-size: .8rem;
                     }
                 }
             }
