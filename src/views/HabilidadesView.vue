@@ -3,87 +3,80 @@
         <section>
             <h1>Habilidades</h1>
             <h2 class="col-80">Front-End</h2>
-            <div class="grade col-100">
-                <span class="col-20">
+            <div class="grade grade-5 col-50">
+                <span class="">
                     <Icon icon="akar-icons:html-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="akar-icons:css-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="akar-icons:javascript-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="akar-icons:sass-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="akar-icons:vue-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="flowbite:tailwind-solid" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="teenyicons:npm-solid" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20 bloco-invisivel"></span>
-                <span class="col-20 bloco-invisivel"></span>
-                <span class="col-20 bloco-invisivel"></span>
             </div>
             <h2 class="col-80">Back-End</h2>
-            <div class="grade col-100">
-                <span class="col-20">
+            <div class="grade grade-5 col-50">
+                <span class="">
                     <Icon icon="akar-icons:php-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="bi:filetype-sql" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="simple-icons:phpmyadmin" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20 bloco-invisivel"></span>
-                <span class="col-20 bloco-invisivel"></span>
             </div>
             <h2 class="col-80">Softwares</h2>
-            <div class="grade col-100">
-                <span class="col-20">
+            <div class="grade grade-5 col-50">
+                <span class="">
                     <Icon icon="akar-icons:vscode-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="akar-icons:github-fill" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="bi:git" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="devicon-plain:photoshop" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20">
+                <span class="">
                     <Icon icon="simple-icons:adobeillustrator" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
             </div>
             <h2 class="col-80">Outros Conhecimentos</h2>
-            <div class="grade col-100">
-                <span class="col-20">
+            <div class="grade grade-5 col-50">
+                <span class="">
                     <Icon icon="devicon-plain:wordpress-wordmark" />
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
-                <span class="col-20 bloco-invisivel"></span>
-                <span class="col-20 bloco-invisivel"></span>
             </div>
         </section>
     </main>

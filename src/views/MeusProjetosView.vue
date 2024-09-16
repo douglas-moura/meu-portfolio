@@ -2,7 +2,7 @@
     <main id="meus-projetos">
         <section>
             <h1>Projetos</h1>
-            <div class="grade">
+            <div class="grade grade-3">
                 <BlocoProjeto
                     v-for="projeto in meusProjetos" :key="projeto.id"
 

@@ -109,7 +109,16 @@ body picture {
 
 .grade {
   display: grid !important;
+}
+
+.grade-3 {
   grid-template-columns: 32% 32% 32%;
+}
+
+.grade-5 {
+  grid-template-columns: 23% 23% 23% 23% 23%;
+  column-gap: 30px;
+  row-gap: 20px;
 }
 
 .sombra {
