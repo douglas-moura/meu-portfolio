@@ -29,7 +29,7 @@ body .pop-up {
 body main, body footer {
   z-index: 990;
 }
-body main, body header, body aside, body nav, body section, body a {
+body main, body header, body aside, body nav, body a {
   display: flex;
   flex-direction: column;
 }
@@ -44,10 +44,6 @@ body main {
   min-height: 95dvh;
   padding: 4rem 2rem;
   margin-bottom: 2rem;
-}
-body main section {
-  margin: auto !important;
-  width: 80%;
 }
 body a {
   text-decoration: none;
@@ -74,16 +70,6 @@ body h2 {
 }
 body h5 {
   color: #dc5f00;
-}
-body section {
-  display: flex;
-  flex-direction: column;
-}
-body section > div {
-  width: 100% !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 body picture {
   display: flex;

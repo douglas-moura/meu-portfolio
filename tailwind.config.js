@@ -7,6 +7,7 @@ export default {
             animation: {
                 'fade-left': 'fadeLeft 2s ease-in-out',
                 'slide-left': 'slideLeft 2s ease-in-out',
+                'slide-right': 'slideRight 2s ease-out',
             },
             keyframes: {
                 fadeLeft: {
@@ -22,6 +23,10 @@ export default {
                 slideLeft: {
                     '0%' : { transform: 'translateX(-300%)' },
                     '100%' : { transform: 'translateX(0%)' }
+                },
+                slideRight: {
+                    '0%' : { left: '150%' },
+                    '100%' : { left: '-1.5rem' }
                 }
             }
         },

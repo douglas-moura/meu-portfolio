@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.oculto {
-    display: none !important;
+.sessao-default {
+    @apply flex flex-col m-auto w-2/3;  
+}
+
+.linha-sessao {
+    @apply w-full grid justify-between;
+}
+
+.col-conteudo {
+    @apply flex flex-col
+}
+
+.circulo {
+    @apply w-full absolute rounded-full border-2 border-orange-500 aspect-square -top-8 -left-6 animate-slide-right
 }

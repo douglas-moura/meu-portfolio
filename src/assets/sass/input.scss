@@ -37,7 +37,7 @@ body {
     .pop-up { z-index: 999 !important; }
     main, footer { z-index: 990; }
 
-    main, header, aside, nav, section, a  {
+    main, header, aside, nav, a  {
         display: flex;
         flex-direction: column;
     }
@@ -54,11 +54,6 @@ body {
         min-height: 95dvh;
         padding: 4rem 2rem;
         margin-bottom: 2rem;
-
-        section {
-            margin: auto !important;
-            width: 80%;
-        }
     }
 
     a {
@@ -92,18 +87,6 @@ body {
 
     h5 {
         color: $laranja;
-    }
-
-    section {
-        display: flex;
-        flex-direction: column;
-        
-        >div {
-            width: 100% !important;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
     }
 
     picture {

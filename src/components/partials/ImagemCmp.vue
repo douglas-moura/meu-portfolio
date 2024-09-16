@@ -16,18 +16,14 @@
 
 <style scoped lang="scss">
     img {
-        width: 100%;
-        object-fit: cover;
+        @apply w-full object-cover;
     }
     
     .redondo {
-        aspect-ratio: 1 / 1;
-        border-radius: 50% !important;
+        @apply aspect-square rounded-full;
     }
 
     .quadrado {
-        aspect-ratio: 1 / 1;
-        border-radius: .5rem !important;
-        object-position: top;
+        @apply aspect-square rounded-lg object-top;
     }
 </style>

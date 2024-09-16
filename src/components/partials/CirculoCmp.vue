@@ -1,9 +1,5 @@
 <template>
-    <div
-        id="circulo"
-        :class="cor"
-        :style="'top:' + top + 'rem; left:' + left + 'rem; width:' + largura + '%; z-index:' + (tipo == 'fundo' ? 900 + '; position: fixed;' : 998 + '; position: absolute;')">
-    </div>
+    <div class="circulo"></div>
 </template>
 
 <script setup>
@@ -18,7 +14,7 @@
 
 <style scoped lang="scss">
     #circulo {
-        width: 100%;
+        width: 100% !important;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
         border: .1rem solid $branco;
