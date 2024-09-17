@@ -11,17 +11,7 @@
 </script>
 
 <style lang="scss">
-    /* Extra small devices (phones, 600px and down) */
-    @media only screen and (max-width: 600px) {
-        /* estilos para dispositivos muito pequenos */
-
-    }
-    
-    main, footer {
-        width: 94%;
-    }
-
-    aside {
-        width: 6%;
+    #app {
+        @apply grid grid-cols-12
     }
 </style>

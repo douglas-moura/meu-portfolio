@@ -2,18 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-cinza-claro text-sm text-preto overflow-x-hidden
+}
+
+aside {
+    @apply z-40 col-span-1
+}
+
+main {
+    @apply min-h-[95dvh] relative p-16
+}
+
+footer {
+    @apply min-h-[5dvh] relative
+}
+
+main, footer {
+    @apply col-span-11 z-20 flex flex-col float-right duration-200 animate-fade-in
+}
+
+header, aside, nav, a {
+    @apply flex flex-col
+}
+
+h1 {
+    @apply text-6xl font-black mb-4
+}
+    
+h2 {
+    @apply text-2xl font-extrabold
+}
+
+h5 {
+    @apply text-laranja
+}
+
+a {
+    @apply cursor-pointer underline-offset-0 flex-row
+}
+
+i, svg {
+    @apply cursor-pointer
+}
+
+li {
+    @apply list-none
+}
+
+picture {
+    @apply flex
+}
+
 .sessao-default {
-    @apply flex flex-col m-auto w-2/3;  
+    @apply flex flex-col m-auto sm:w-full md:w-full lg:w-2/3 xl:w-2/3 2xl:w-4/5 
 }
 
 .linha-sessao {
-    @apply w-full grid justify-between;
+    @apply w-full grid justify-between gap-6
 }
 
 .col-conteudo {
     @apply flex flex-col
 }
 
-.circulo {
-    @apply w-full absolute rounded-full border-2 border-orange-500 aspect-square -top-8 -left-6 animate-slide-right
+.box-habilidade {
+    @apply border-2 border-cinza-escuro bg-cinza-claro aspect-square flex flex-col p-4 mb-1 overflow-hidden hover:border-laranja
 }

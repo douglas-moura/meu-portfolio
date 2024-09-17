@@ -1,8 +1,8 @@
 <template>
-    <aside class="fixed flex-row h-dvh justify-center animate-fade-left">
+    <aside class="h-dvh justify-center animate-fade-left">
         <section
             id="menu"
-            :class="['sombra absolute min-w-3.5 min-h-96 max-h-96 my-auto mx-4 p-2 justify-between rounded-lg bg-white transition-all duration-300 ease-out', {'menu-aberto': menuAberto.menu}]"
+            :class="['fixed min-w-3.5 min-h-96 max-h-96 my-auto mx-4 p-2 flex flex-col justify-between rounded-lg bg-white transition-all duration-300 ease-out', {'menu-aberto': menuAberto.menu}]"
             @mouseenter="abrirMenu()"
             @mouseleave="abrirMenu()">
             <nav id="links-nav">
@@ -49,12 +49,12 @@
                 setTimeout(() => {
                     menuAberto.value.link = false
                     menuAberto.value.icone = false
-                    menu.style.minWidth = '5%'
+                    menu.style.minWidth = '2%'
                 }, 100)
             }, 350)
         } else {
             setTimeout(() => {
-                menu.style.minWidth = '300%'
+                menu.style.minWidth = '15%'
                 setTimeout(() => {
                     menuAberto.value.menu = true
                 }, 300)

@@ -1,49 +1,46 @@
 <template>
-    <div class="pop-up">
-        <section id="projeto-aberto" :class="oculto ? 'ocultar' : ''">
-            <span>
-                <Icon icon="akar-icons:circle-x" @click="fecharProjeto()" />
+    <div class="bg-branco backdrop-blur-md bg-opacity-70 z-50 w-full h-full top-0 left-0 fixed flex justify-center items-center transition-all animate-fade-in">
+        <section id="projeto-aberto" :class="['sessao-default cursor-auto h-4/5 2xl:w-3/5 m-auto fixed rounded-2xl overflow-hidden bg-cinza-escuro bg-opacity-90 border-2 border-branco animate-slide-top', {'ocultar': oculto}]">
+            <span class="h-12 bg-preto flex flex-row justify-end">
+                <Icon class="text-laranja h-8 w-8 m-2" icon="akar-icons:circle-x" @click="fecharProjeto()" />
             </span>
-            <div class="conteudo">
-                <div class="col-30 projeto-infos">
+            <div id="conteudo-projeto" class="grid grid-cols-3 m-4">
+                <div class="h-full p-8 text-cinza-claro">
                     <h2>{{ infoProjeto.titulo }}</h2>
                     <br>
                     <p>{{ infoProjeto.tipo }}</p>
-                    <hr>
-                    <ul>
+                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
+                    <ul class="mb-4">
                         <li>{{ infoProjeto.descr }}</li>
                     </ul>
-                    <hr>
-                    <p class="acessar-projeto">
-                        <Icon icon="akar-icons:arrow-right" />
-                        <a :href="infoProjeto.link" target="_blank">Acesse</a>
+                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
+                    <p class="flex items-center">
+                        <Icon class="my-0 mx-2 h-6 w-6" icon="akar-icons:arrow-right" />
+                        <a class="text-branco text-base" :href="infoProjeto.link" target="_blank">Acesse</a>
                     </p>
-                    <hr>
+                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
                     <h4>Tecnologias Usadas:</h4>
-                    <ul id="tecs-lista">
-                        <li v-for="tec in tecsProjeto" :key="tec.id">
-                            <Icon :icon="tec.icone" />
-                            {{ tec.nome }}
+                    <ul>
+                        <li class="mt-2 flex items-center leading-8" v-for="tec in tecsProjeto" :key="tec.id">
+                            <Icon class="mr-2 w-6 h-6" :icon="tec.icone" /> {{ tec.nome }}
                         </li>
                     </ul>
                 </div>
-                <section class="col-70 box-sub projeto-galeria">
-                    <div>
-                        <div class="col-90 galeria-principal">
-                            <picture v-if="infoProjeto && infoProjeto.imgs && infoProjeto.imgs.length > 0 && infoProjeto.imgs[0].arquivos && infoProjeto.imgs[0].arquivos.length > 0">
-                                <ImagemCmp
-                                    :src="getImagePath(infoProjeto.imgs[0].pasta, imgAberta)"
-                                />
-                            </picture>
-                        </div>
-                        <div class="col-10 galeria-minis" v-if="infoProjeto.imgs && infoProjeto.imgs.length && infoProjeto.imgs[0].arquivos.length">
-                            <picture v-for="(arquivo, index) in infoProjeto.imgs[0].arquivos" :key="index" >
-                                <ImagemCmp
-                                    :src="getImagePath(infoProjeto.imgs[0].pasta, arquivo)" :alt="'Imagem ' + index"
-                                    @click="abrirImagem(arquivo)"                             
-                                />
-                            </picture>
-                        </div>
+                <section class="h-full overflow-hidden col-span-2 grid grid-cols-10 gap-2">
+                    <div id="galeria-principal" class="col-span-9 rounded-lg border-2 border-cinza-medio cursor-pointer overflow-y-scroll overflow-x-hidden">
+                        <picture v-if="infoProjeto && infoProjeto.imgs && infoProjeto.imgs.length > 0 && infoProjeto.imgs[0].arquivos && infoProjeto.imgs[0].arquivos.length > 0">
+                            <ImagemCmp
+                                :src="getImagePath(infoProjeto.imgs[0].pasta, imgAberta)"
+                            />
+                        </picture>
+                    </div>
+                    <div id="galeria-minis" class="pr-1 col-span-1 overflow-y-scroll" v-if="infoProjeto.imgs && infoProjeto.imgs.length && infoProjeto.imgs[0].arquivos.length">
+                        <picture class="hover:opacity-100 last:mb-0 opacity-50 cursor-pointer border-2 border-cinza-claro mb-3 rounded-sm aspect-square overflow-hidden" v-for="(arquivo, index) in infoProjeto.imgs[0].arquivos" :key="index" >
+                            <ImagemCmp
+                                :src="getImagePath(infoProjeto.imgs[0].pasta, arquivo)" :alt="'Imagem ' + index"
+                                @click="abrirImagem(arquivo)"                             
+                            />
+                        </picture>
                     </div>
                 </section>
             </div>
@@ -52,9 +49,9 @@
 </template>
 
 <script setup>
+    import ImagemCmp from '@/components/partials/ImagemCmp.vue'
     import { Icon } from '@iconify/vue'
     import { ref } from 'vue'
-    import ImagemCmp from '@/components/partials/ImagemCmp.vue'
     
     //dados
     const oculto = ref(false)
@@ -76,7 +73,7 @@
             oculto.value = false
             imgAberta.value = 1
             emit('ocultarProjeto')
-        }, 500)
+        }, 1200)
     }
     function getImagePath(pasta, arquivo) {
         return `projetos/${pasta}/${arquivo}`
@@ -88,127 +85,20 @@
 
 <style lang="scss" scoped>
     #projeto-aberto {
-        cursor: auto;
-        width: 60%;
-        height: 80%;
-        margin: auto !important;
-        position: fixed;
-        border-radius: 1rem;
-        overflow: hidden;
-        background-color: rgba($cinza-escuro, .7);
-        border: .2rem solid $branco;
-        animation-name: slideTop;
-        animation-duration: .8s;
-        transition: .4s;
-                
-        span {
-            height: 3rem;
-            background-color: $preto;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
+        transition: 1s !important;
 
-            svg {
-                color: $laranja;
-                height: 2rem;
-                width: 2rem;
-                margin: .5rem;
-            }
-        }
-
-        .conteudo {
-            overflow: hidden;
-            height: calc(95% - 4rem);
-            margin: 1rem !important;
-            
-            div, section {
-                height: 100%;
-            }
-            
-            .projeto-infos {
-                padding: 2rem;
-                color: $cinza-claro;
-
-                hr {
-                    margin: 1rem 0;
-                    border: .1rem solid $cinza-medio;
-                }
-
-                .acessar-projeto {
-                    display: flex;
-                    align-items: center;
-                    
-                    a {
-                        font-size: 1rem;
-                        color: $cinza-claro !important;
-                    }
-
-                    svg {
-                        margin: 0 .5rem !important;
-                        height: 1.5rem;
-                        width: 1.5rem;
-                    }
-                }
-
-                #tecs-lista {
-                    li {
-                        margin-top: .5rem !important;
-                        display: flex;
-                        align-items: center;
-                        line-height: 2rem;
-
-                        svg {
-                            margin-right: .5rem;
-                            height: 1.5rem;
-                            width: 1.5rem;
-                        }
-                    }
+        #conteudo-projeto {
+            height: calc(100% - 5rem);
+    
+            #galeria-minis {
+                &::-webkit-scrollbar-thumb {
+                    @apply bg-laranja;
                 }
             }
-            
-            .projeto-galeria {
-                div {
-
-                    >div {
-                        overflow-y: scroll;
-                        overflow-x: hidden;
-                    }
-                    
-                    .galeria-minis {
-                        padding-right: .25rem;
-
-                        &::-webkit-scrollbar-thumb {
-                            background: $laranja !important; 
-                        }
-                        
-                        picture {
-                            opacity: .5;
-                            cursor: pointer !important;
-                            transition: .1s;
-                            border: .2rem solid $cinza-claro;
-                            border-radius: .25rem;
-                            aspect-ratio: 1 / 2;
-                            overflow: hidden;
-
-                            &:not(:last-child) {
-                                margin-bottom: 1rem;
-                            }
-
-                            &:hover {
-                                opacity: 1;
-                            }    
-                        }
-                    }
-                    
-                    .galeria-principal {
-                        border-radius: .5rem !important;
-                        border: .2rem solid $cinza-medio;
-                        cursor: pointer !important;
-
-                        &::-webkit-scrollbar {
-                            width: 0 !important;
-                        }
-                    }
+    
+            #galeria-principal {
+                &::-webkit-scrollbar {
+                    width: 0 !important;
                 }
             }
         }
