@@ -10,8 +10,4 @@
     import PageFoot from '../src/components/layouts/PageFoot.vue'
 </script>
 
-<style lang="scss">
-    #app {
-        @apply grid grid-cols-12
-    }
-</style>
+<style lang="scss"></style>

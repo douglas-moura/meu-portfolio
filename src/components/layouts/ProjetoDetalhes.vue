@@ -92,7 +92,7 @@
     
             #galeria-minis {
                 &::-webkit-scrollbar-thumb {
-                    @apply bg-laranja;
+                    background-color: #dc5f00;
                 }
             }
     
