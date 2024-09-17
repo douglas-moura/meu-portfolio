@@ -75,39 +75,20 @@
 </script>
 
 <style scoped lang="scss">
-    #menu {
-        box-shadow: .5rem 0 5rem rgba(#000, .2);
-    }
-
+    #menu { box-shadow: .5rem 0 5rem rgba(#000, .2); }
     .menu-aberto {
-        p {
-            display: block !important;
-        }
-
+        p { display: block !important; }
         #links-social {
-            #more {
-                display: none !important;
-            }
-            
-            a {
-                display: inline-flex !important;
-            }
+            #more { display: none !important; }
+            a { display: inline-flex !important; }
         }
     }
-
     .menu-aberto-link {
         opacity: 1 !important;
         margin-left: 1rem !important;
     }
-
     .menu-aberto-social {
-        a {
-            opacity: 1 !important;
-            
-        }
-
-        a:not(:last-of-type) {
-            margin-right: 1rem;
-        }
+        a { opacity: 1 !important; }
+        a:not(:last-of-type) { margin-right: 1rem; }
     }
 </style>
