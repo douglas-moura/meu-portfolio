@@ -18,7 +18,7 @@
                 </span>
                 <span class="box-habilidade group">
                     <Icon class="h-12 w-12 mb-4 group-hover:text-laranja" icon="akar-icons:sass-fill" />
-                    <Icon class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</Icon>
+                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet</p>
                 </span>
                 <span class="box-habilidade group">
                     <Icon class="h-12 w-12 mb-4 group-hover:text-laranja" icon="akar-icons:vue-fill" />

@@ -39,7 +39,7 @@ h5 {
 }
 
 a {
-    @apply cursor-pointer underline-offset-0 flex-row
+    @apply cursor-pointer underline-offset-0
 }
 
 i, svg {
