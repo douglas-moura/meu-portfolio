@@ -11,11 +11,5 @@
 </script>
 
 <style lang="scss">
-    main, footer {
-        width: 94%;
-    }
 
-    aside {
-        width: 6%;
-    }
 </style>

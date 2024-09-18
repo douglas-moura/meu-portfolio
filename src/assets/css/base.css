@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  box-sizing: border-box !important;
+}
+*::-webkit-scrollbar {
+  width: 0.3rem;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #414141;
+  border-radius: 2rem;
+}
+
+body {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #252525 !important;
+}
+
+/*# sourceMappingURL=base.css.map */

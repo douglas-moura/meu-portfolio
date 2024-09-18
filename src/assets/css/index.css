@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* min 1536px - 2xl: MONITOR GRANDE */
+/* min 1280px - xl: MONITOR NOTEBOOK */
+
+body {
+    @apply bg-cinza-claro  text-sm text-preto overflow-x-hidden
+}
+
+aside {
+    @apply z-40 col-span-1
+}
+
+main {
+    @apply min-h-[95dvh] relative p-16
+}
+
+footer {
+    @apply min-h-[5dvh] relative
+}
+
+main, footer {
+    @apply col-span-11 z-20 flex flex-col float-right duration-200 animate-fade-in
+}
+
+header, aside, nav, a {
+    @apply flex flex-col
+}
+
+h1 {
+    @apply text-6xl font-black mb-8
+}
+    
+h2 {
+    @apply text-2xl font-extrabold
+}
+
+h5 {
+    @apply text-laranja
+}
+
+a {
+    @apply cursor-pointer underline-offset-0
+}
+
+i, svg {
+    @apply cursor-pointer
+}
+
+li {
+    @apply list-none
+}
+
+picture {
+    @apply flex
+}
+
+.sessao-default {
+    @apply flex flex-col m-auto sm:w-full md:w-full lg:w-4/5 xl:w-full 2xl:w-4/5 
+}
+
+.linha-sessao {
+    @apply w-full grid justify-between gap-6
+}
+
+.col-conteudo {
+    @apply flex flex-col
+}
+
+.box-habilidade {
+    @apply border-2 border-cinza-escuro bg-cinza-claro aspect-square flex flex-col p-4 mb-1 overflow-hidden hover:border-laranja
+}

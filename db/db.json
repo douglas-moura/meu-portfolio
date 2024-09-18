@@ -66,6 +66,19 @@
                     "arquivos": [1, 2, 3, 4, 5, 6]
                 }
             ]
+        },
+        { 
+            "id": "6",
+            "periodo": 2024,
+            "title": "Maxx Prêmios",
+            "desc": "Plataforma Troca de Pontos",
+            "tecnologias": [1, 2, 3, 4, 6],
+            "imagens" : [
+                {
+                    "pasta": "agr",
+                    "arquivos": [1, 2, 3, 4, 5, 6]
+                }
+            ]
         }
     ],
     "conhecimentos": [

@@ -9,18 +9,19 @@
         @mouseenter="mostrarFlip()"
         @mouseleave="ocultaFlip()"
         id="bloco-projeto"
-        class="col-100"
+        class="relative flex cursor-pointer m-0 mt-6 rounded-xl overflow-hidden bg-branco bg-cover bg-top min-h-35rem justify-center items-center"
     >
-        <div :class="!flipAtivo ? 'btnOculto' : ''">
-            <div>
+        <div id="bloco-conteudo" :class="['absolute h-full w-full p-12 backdrop-blur-lg transition-all duration-300', {'btn-oculto': !flipAtivo}]">
+            <div class="text-branco transition-all duration-300 scale-100">
                 <h5>{{ props.periodo }}</h5>
-                <h2>{{ props.titulo }}</h2>
-                <hr>
-                <p>{{ props.descr }}</p>
-                <span>
+                <h2 class="min-h-20">{{ props.titulo }}</h2>
+                <hr class="my-4 mx-0 border-laranja">
+                <p class="mb-8 pr-4">{{ props.descr }}</p>
+                <span class="flex">
                     <Icon
                         v-for="tec in tecnicasProjeto" :key="tec.id"
                         :icon="tec.icone"
+                        class="h-6 w-6 mr-4"
                     />
                 </span>
             </div>
@@ -29,6 +30,7 @@
             @click="abrirProjeto()"
             v-show="!flipAtivo"
             btnTexto="Ver mais"
+            class="m-auto"
         />
         <span>
             <ProjetoDetalhes
@@ -107,58 +109,11 @@
 
 <style scoped lang="scss">
     #bloco-projeto {
-        cursor: pointer;
-        margin: 0 !important;
-        margin-top: 3rem !important;
-        border-radius: 1rem;
-        overflow: hidden;
-        background-image: url('../../assets/img/site-1.jpg');
-        background-color: $branco;
-        background-size: cover;
-        background-position: center top;
-        min-height: 30rem;
-        justify-content: center;
-        align-items: center;
-        
-        >div {
-            background-image: linear-gradient(rgba(#000, .8), rgba(#000, .3));
-            height: 100%;
-            padding: 3rem;
-            backdrop-filter: blur(10px);
-            transition: .3s;
-
-            div {
-                color: $branco;
-                transition: .3s;
-                transform: scale(1);
-
-                h2 {
-                    min-height: 5rem;
-                }
-
-                p {
-                    margin-bottom: 2rem;
-                    padding-right: 1rem;
-                }
-
-                hr {
-                    margin: 1rem 0;
-                    border: .1rem solid $laranja
-                }
-    
-                span {
-                    display: flex;
-                    
-                    svg {
-                        height: 1.5rem;
-                        width: 1.5rem;
-                        margin-right: 1rem;
-                    }
-                }
-            }
+        #bloco-conteudo {
+            background-image: linear-gradient(rgba(#000, .8), rgba(#000, .3)) !important;
         }
 
-        .btnOculto {
+        .btn-oculto {
             opacity: .3;
             
             div {

@@ -1,11 +1,10 @@
 <template>
-    <main id="meus-projetos">
-        <section>
+    <main>
+        <section class="sessao-default">
             <h1>Projetos</h1>
-            <div class="grade grade-3">
+            <div class="linha-sessao grid-cols-3">
                 <BlocoProjeto
                     v-for="projeto in meusProjetos" :key="projeto.id"
-
                     :periodo="projeto.periodo"
                     :titulo="projeto.title"
                     :descr="projeto.desc"
@@ -14,27 +13,13 @@
                     :tecs="projeto.tecnologias"
                     :imgs="projeto.imagens"
                 />
-                <!--
-                <BlocoProjeto
-                    v-show="qtd == 2"
-                    titulo="blank"
-                />
-                -->
             </div>
         </section>
     </main>
-    <!--
-    <ProjetoDetalhes
-        v-if="projetoAberto"
-        @ocultarProjeto="mostrarProjeto"
-        :statusPopup=projetoAberto
-    />
-    -->
 </template>
 
 <script setup>
     import BlocoProjeto from '@/components/partials/BlocoProjeto.vue'
-    //import ProjetoDetalhes from '@/components/layouts/ProjetoDetalhes.vue'
     import { onMounted, ref } from 'vue'
     import axios from 'axios'
 
@@ -59,8 +44,4 @@
     })
 </script>
 
-<style scoped>
-    .oculto {
-        visibility: hidden;
-    }
-</style>
+<style scoped lang="scss"></style>
