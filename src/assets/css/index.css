@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 2xl: MONITOR GRANDE */
-/* xl: MONITOR NOTEBOOK */
+/* min 1536px - 2xl: MONITOR GRANDE */
+/* min 1280px - xl: MONITOR NOTEBOOK */
 
 body {
-    @apply bg-cinza-claro text-sm text-preto overflow-x-hidden
+    @apply bg-cinza-claro  text-sm text-preto overflow-x-hidden
 }
 
 aside {
@@ -30,7 +30,7 @@ header, aside, nav, a {
 }
 
 h1 {
-    @apply text-6xl font-black mb-4
+    @apply text-6xl font-black mb-8
 }
     
 h2 {

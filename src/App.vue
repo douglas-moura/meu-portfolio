@@ -10,4 +10,6 @@
     import PageFoot from '../src/components/layouts/PageFoot.vue'
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

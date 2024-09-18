@@ -76,9 +76,6 @@
 
 <style scoped lang="scss">
     #menu { box-shadow: .5rem 0 5rem rgba(#000, .2); }
-    .aberto { 
-        @apply xl:w-1/4 2xl:w-1/6
-     }
     .menu-aberto {
         p { display: block !important; }
         #links-social {

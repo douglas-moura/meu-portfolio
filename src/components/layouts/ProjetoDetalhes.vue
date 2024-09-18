@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-branco backdrop-blur-md bg-opacity-70 z-50 w-full h-full top-0 left-0 fixed flex justify-center items-center transition-all animate-fade-in">
+    <div class="bg-branco backdrop-blur-md bg-opacity-70 z-50 w-full h-full top-0 left-0 fixed flex justify-center items-center transition-all animate-fade-in duration-100">
         <section id="projeto-aberto" :class="['sessao-default cursor-auto h-4/5 xl:w-4/5 2xl:w-3/5 m-auto fixed rounded-2xl overflow-hidden bg-cinza-escuro bg-opacity-90 border-2 border-branco animate-slide-top', {'ocultar': oculto}]">
             <span class="h-12 bg-preto flex flex-row justify-end">
                 <Icon class="text-laranja h-8 w-8 m-2" icon="akar-icons:circle-x" @click="fecharProjeto()" />
@@ -85,7 +85,7 @@
 
 <style lang="scss" scoped>
     #projeto-aberto {
-        transition: 1s !important;
+        transition: .5s !important;
 
         #conteudo-projeto {
             height: calc(100% - 5rem);

@@ -14,10 +14,10 @@ export default {
             },
             animation: {
                 'fade-left': 'fadeLeft 2s ease-in-out',
-                'fade-in': 'fadeIn 2s ease-out',
+                'fade-in': 'fadeIn .5s ease-out',
                 'slide-left': 'slideLeft 2s ease-in-out',
                 'slide-right': 'slideRight 2s ease-out',
-                'slide-top': 'slideTop 2s ease-out',
+                'slide-top': 'slideTop .7s ease-out',
             },
             colors: {
                 branco: '#ffffff',
@@ -27,7 +27,6 @@ export default {
                 "cinza-claro": '#eeeeee',
                 "cinza-medio": '#686d76',
                 "cinza-escuro": '#373a40',
-                "laranja-claro": '#ffdec4'
             },
             keyframes: {
                 fadeLeft: {
@@ -49,8 +48,8 @@ export default {
                     '100%' : { transform: 'translateX(0%)' }
                 },
                 slideRight: {
-                    '0%' : { left: '150%' },
-                    '100%' : { left: '-1.5rem' }
+                    '0%' : { transform: 'translateX(300%)' },
+                    '100%' : { transform: 'translateX(0%)' }
                 },
                 slideTop: {
                     '0%' : { transform: 'translateY(-100%)' },
