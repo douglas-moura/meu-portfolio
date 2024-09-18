@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 2xl: MONITOR GRANDE */
+/* xl: MONITOR NOTEBOOK */
+
 body {
     @apply bg-cinza-claro text-sm text-preto overflow-x-hidden
 }
@@ -55,7 +58,7 @@ picture {
 }
 
 .sessao-default {
-    @apply flex flex-col m-auto sm:w-full md:w-full lg:w-2/3 xl:w-2/3 2xl:w-4/5 
+    @apply flex flex-col m-auto sm:w-full md:w-full lg:w-4/5 xl:w-full 2xl:w-4/5 
 }
 
 .linha-sessao {
