@@ -86,8 +86,4 @@
     import { Icon } from '@iconify/vue'
 </script>
 
-<style scoped lang="scss">
-    #linha-habil {
-        
-    }
-</style>
+<style scoped lang="scss"></style>
