@@ -4,21 +4,21 @@
             <span class="h-12 bg-preto flex flex-row justify-end">
                 <Icon class="text-laranja h-8 w-8 m-2" icon="akar-icons:circle-x" @click="fecharProjeto()" />
             </span>
-            <div id="conteudo-projeto" class="grid grid-cols-3 m-4">
-                <div class="h-full p-8 text-cinza-claro">
+            <div id="conteudo-projeto" class="grid grid-cols-3 m-4 overflow-hidden border-red-500 border-2 ">
+                <div class=" h-fit p-8 text-cinza-claro">
                     <h2>{{ infoProjeto.titulo }}</h2>
                     <br>
                     <p>{{ infoProjeto.tipo }}</p>
-                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
+                    <hr class="my-4 mx-0 border-fina border-cinza-claro opacity-50">
                     <ul class="mb-4">
-                        <li>{{ infoProjeto.descr }}</li>
+                        <li class="text-sm">{{ infoProjeto.descr }}</li>
                     </ul>
-                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
+                    <hr class="my-4 mx-0 border-fina border-cinza-claro opacity-50">
                     <p class="flex items-center">
                         <Icon class="my-0 mx-2 h-6 w-6" icon="akar-icons:arrow-right" />
                         <a class="text-branco text-base" :href="infoProjeto.link" target="_blank">Acesse</a>
                     </p>
-                    <hr class="my-4 mx-0 border-2 border-cinza-claro opacity-50">
+                    <hr class="my-4 mx-0 border-fina border-cinza-claro opacity-50">
                     <h4>Tecnologias Usadas:</h4>
                     <ul>
                         <li class="mt-2 flex items-center leading-8" v-for="tec in tecsProjeto" :key="tec.id">

@@ -7,11 +7,11 @@
                     <h5 class="mb-4 text-orange-500 font-extrabold">_Desenvolvedor Web Front-End - São Paulo | SP</h5>
                     <p class="xl:w-11/12 2xl:w-4/5 mb-8">Sou um desenvolvedor frontend apaixonado por criar interfaces digitais intuitivas e eficientes. Atualmente, foco meus conhecimentos no JavaScript e seu framework Vue Js 3. Sempre em busca de novos aprendizados, meu objetivo é aprimorar continuamente minhas habilidades e trazer experiências únicas para a web.</p>
                     <span class="flex gap-2">
-                        <p class="mr-4 p-4 border-cinza-escuro border-4 rounded-full flex">
+                        <p class="text-xs mr-4 p-4 border-cinza-escuro border-2 2xl:border-4 rounded-full flex">
                             <Icon class="mr-4" icon="akar-icons:envelope" height="1.2rem" />
                             douglas12345.dsm@gmail.com
                         </p>
-                        <p class="mr-4 p-4 border-cinza-escuro border-4 rounded-full flex">
+                        <p class="text-xs mr-4 p-4 border-cinza-escuro border-2 2xl:border-4 rounded-full flex">
                             <Icon class="mr-4" icon="akar-icons:whatsapp-fill" height="1rem" />
                             +55 11 95305-5285
                         </p>
@@ -30,10 +30,10 @@
                         -->
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="w-full absolute rounded-full border-4 border-laranja aspect-square -top-6 -left-4 animate-slide-right"></div>
+                <div class="relative flex flex-col justify-center">
+                    <div class="w-full absolute rounded-full border-4 border-laranja aspect-square top-8 -left-6 animate-slide-right"></div>
                     <ImagemCmp
-                        src="foto-perfil-2"
+                        src="foto-perfil"
                         formato="redondo"
                         textoAlt="Minha Foto"
                     />

@@ -12,6 +12,9 @@ export default {
                 '5dvh': '5dvh',
                 '35rem': '35rem'
             },
+            border: {
+                'fina': '.5rem'
+            },
             animation: {
                 'fade-left': 'fadeLeft 2s ease-in-out',
                 'fade-in': 'fadeIn .5s ease-out',
