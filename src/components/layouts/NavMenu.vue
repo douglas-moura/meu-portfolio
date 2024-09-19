@@ -1,5 +1,5 @@
 <template>
-    <aside class="h-vh bg-emerald-400 justify-end md:justify-center md:h-dvh w-1/12 fixed">
+    <aside class="h-vh justify-end md:justify-center md:h-dvh w-1/12 fixed">
         <section class="sessao-default bg-branco fixed z-40 w-screen h-fit bottom-0 md:hidden">
             <div class="linha-sessao grid-cols-4 m-0 p-0">
                 <RouterLink class="justify-center items-center p-2" to="/">

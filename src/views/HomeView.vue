@@ -5,23 +5,23 @@
                 <div class="col-conteudo justify-center md:col-span-2">
                     <h1>Douglas Moura</h1>
                     <h5 class="mb-4 text-orange-500 font-extrabold">_Desenvolvedor Web Full Stack - São Paulo | SP</h5>
-                    <p class="text-xs mb-8 md:text-sm md:w-11/12 2xl:w-4/5">Sou um desenvolvedor frontend apaixonado por criar interfaces digitais intuitivas e eficientes. Atualmente, foco meus conhecimentos no JavaScript e seu framework Vue Js 3. Sempre em busca de novos aprendizados, meu objetivo é aprimorar continuamente minhas habilidades e trazer experiências únicas para a web.</p>
-                    <span class="flex flex-col gap-2">
-                        <p class="text-xs rounded-full flex p-2 border-cinza-escuro border-2 md:mr-4 md:p-4 2xl:border-4">
-                            <Icon class="mr-4" icon="akar-icons:envelope" height="1.2rem" />
+                    <p class="text-xs mb-8 md:text-xl md:w-11/12 2xl:w-4/5">Sou um desenvolvedor frontend apaixonado por criar interfaces digitais intuitivas e eficientes. Atualmente, foco meus conhecimentos no JavaScript e seu framework Vue Js 3. Sempre em busca de novos aprendizados, meu objetivo é aprimorar continuamente minhas habilidades e trazer experiências únicas para a web.</p>
+                    <span class="flex flex-col gap-2 md:flex-row">
+                        <p class="text-xs rounded-full flex items-center p-2 border-cinza-escuro border-2 md:text-base md:mr-4 md:p-4 2xl:border-4">
+                            <Icon class="mr-4 size-4 md:size-6" icon="akar-icons:envelope" />
                             douglas12345.dsm@gmail.com
                         </p>
-                        <p class="text-xs rounded-full flex p-2 border-cinza-escuro border-2 md:mr-4 md:p-4 2xl:border-4">
-                            <Icon class="mr-4" icon="akar-icons:whatsapp-fill" height="1rem" />
+                        <p class="text-xs rounded-full flex items-center p-2 border-cinza-escuro border-2 md:text-base md:mr-4 md:p-4 2xl:border-4">
+                            <Icon class="mr-4 size-4 md:size-6" icon="akar-icons:whatsapp-fill" />
                             +55 11 95305-5285
                         </p>
                     </span>
                     <div class="linha-sessao my-10 grid-cols-5 md:mt-20 md:grid-cols-10">
-                        <Icon class="size-8 xl:size-8 2xl:size-10" icon="akar-icons:html-fill" />
-                        <Icon class="size-8 xl:size-8 2xl:size-10" icon="akar-icons:css-fill" />
-                        <Icon class="size-8 xl:size-8 2xl:size-10" icon="akar-icons:javascript-fill" />
-                        <Icon class="size-8 xl:size-8 2xl:size-10" icon="akar-icons:sass-fill" />
-                        <Icon class="size-8 xl:size-8 2xl:size-10" icon="akar-icons:vue-fill" />
+                        <Icon class="size-8 md:size-10 2xl:size-14" icon="akar-icons:html-fill" />
+                        <Icon class="size-8 md:size-10 2xl:size-14" icon="akar-icons:css-fill" />
+                        <Icon class="size-8 md:size-10 2xl:size-14" icon="akar-icons:javascript-fill" />
+                        <Icon class="size-8 md:size-10 2xl:size-14" icon="akar-icons:sass-fill" />
+                        <Icon class="size-8 md:size-10 2xl:size-14" icon="akar-icons:vue-fill" />
                         <!--
                         <span><Icon icon="akar-icons:php-fill" /></span>
                         <span><Icon icon="bi:filetype-sql" /></span>

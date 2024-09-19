@@ -16,12 +16,12 @@
                 <h5>{{ props.periodo }}</h5>
                 <h2 class="min-h-20">{{ props.titulo }}</h2>
                 <hr class="my-4 mx-0 border-laranja">
-                <p class="mb-8 pr-4 text-xs md:text-sm">{{ props.descr }}</p>
+                <p class="mb-8 pr-4 text-xs md:text-base">{{ props.descr }}</p>
                 <span class="flex">
                     <Icon
                         v-for="tec in tecnicasProjeto" :key="tec.id"
                         :icon="tec.icone"
-                        class="h-6 w-6 mr-4"
+                        class="size-6 mr-4 md:size-10 md:mr-6"
                     />
                 </span>
             </div>
