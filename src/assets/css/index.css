@@ -67,7 +67,7 @@ picture {
 }
 
 .sessao-default {
-    @apply flex flex-col m-auto sm:w-full md:w-full lg:w-4/5 xl:w-full 2xl:w-4/5 
+    @apply flex flex-col m-auto w-full md:w-full lg:w-4/5 xl:w-full 2xl:w-4/5 
 }
 
 .linha-sessao {
