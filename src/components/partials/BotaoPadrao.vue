@@ -1,5 +1,5 @@
 <template>
-    <button id="btn-padrao" class="absolute cursor-pointer m-auto text-base font-extrabold py-2 px-6 rounded-full border-4 border-branco text-branco md:py-4 md:px-8 md:rounded-full md:border-4">
+    <button id="btn-padrao" class="absolute cursor-pointer m-auto text-base font-extrabold py-2 px-6 rounded-full border-4 border-branco text-branco md:py-4 md:px-8 md:rounded-full md:border-4 lg:text-sm lg:py-4 lg:px-8">
         {{ btnTexto }}
     </button>
 </template>

@@ -10,6 +10,7 @@ export default {
             spacing: {
                 '95dvh': '95dvh',
                 '5dvh': '5dvh',
+                '30rem': '30rem',
                 '35rem': '35rem'
             },
             border: {

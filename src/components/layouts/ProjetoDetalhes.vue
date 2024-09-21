@@ -1,9 +1,11 @@
 <template>
     <div class="bg-branco backdrop-blur-2xl bg-opacity-80 z-50 w-full h-full top-0 left-0 fixed flex justify-center items-center transition-all animate-fade-in duration-100">
         <section id="projeto-aberto" :class="['grid grid-rows-12 cursor-auto h-4/5 m-auto fixed rounded-2xl overflow-hidden bg-cinza-escuro bg-opacity-90 border-2 border-branco animate-slide-top xl:w-4/5 2xl:w-3/5', {'ocultar': oculto}]">
-            <span class="row-span-1 bg-preto flex justify-end w-full">
-                <Icon class="text-laranja size-4/6 text-right my-auto flex" icon="akar-icons:circle-x" @click="fecharProjeto()" />
-            </span>
+            <div class="row-span-1 bg-preto flex justify-end w-full">
+                <span class="text-right h-full aspect-square flex">
+                    <Icon class="text-laranja size-4/6 m-auto" icon="akar-icons:circle-x" @click="fecharProjeto()" />
+                </span>
+            </div>
             <div id="conteudo-projeto" class="grid grid-cols-3 row-span-11 m-4 overflow-hidden">
                 <div class=" overflow-y-scroll p-8 text-cinza-claro">
                     <h2>{{ infoProjeto.titulo }}</h2>

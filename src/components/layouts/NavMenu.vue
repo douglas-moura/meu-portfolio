@@ -38,7 +38,7 @@
                 </RouterLink>
                 <RouterLink class="flex-row min-h-2 p-2 items-center rounded-md mb-2 hover:bg-zinc-200 group" to="/projetos">
                     <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900" type="folder"></vue-feather>
-                    <p :class="['text-link p-0 m-0 hidden text-sm opacity-0 ease-in duration-150', {'menu-aberto-link': menuAberto.link}]">Projetos</p>
+                    <p :class="['text-link p-0 m-0 hidden text-sm opacity-0 ease-in duration-150', {'menu-aberto-link': menuAberto.link}]">Meus Projetos</p>
                 </RouterLink>
                 <RouterLink class="flex-row min-h-2 p-2 items-center rounded-md mb-2 hover:bg-zinc-200 group" to="/habilidades">
                     <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900" type="code"></vue-feather>
