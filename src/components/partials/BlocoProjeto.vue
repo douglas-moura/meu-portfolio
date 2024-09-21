@@ -9,19 +9,19 @@
         @mouseenter="mostrarFlip()"
         @mouseleave="ocultaFlip()"
         id="bloco-projeto"
-        class="relative flex cursor-pointer m-0 mt-6 rounded-xl overflow-hidden bg-branco bg-cover bg-top min-h-35rem justify-center items-center"
+        class="relative flex cursor-pointer m-0 mt-6 rounded-xl overflow-hidden bg-branco bg-cover bg-top justify-center items-center min-h-96 md:min-h-35rem"
     >
-        <div id="bloco-conteudo" :class="['absolute h-full w-full p-12 backdrop-blur-lg transition-all duration-300', {'btn-oculto': !flipAtivo}]">
+        <div id="bloco-conteudo" :class="['absolute h-full w-full backdrop-blur-lg transition-all duration-300 p-4 md:p-12', {'btn-oculto': !flipAtivo}]">
             <div class="text-branco transition-all duration-300 scale-100">
                 <h5>{{ props.periodo }}</h5>
                 <h2 class="min-h-20">{{ props.titulo }}</h2>
                 <hr class="my-4 mx-0 border-laranja">
-                <p class="mb-8 pr-4">{{ props.descr }}</p>
+                <p class="mb-8 pr-4 text-xs md:text-base">{{ props.descr }}</p>
                 <span class="flex">
                     <Icon
                         v-for="tec in tecnicasProjeto" :key="tec.id"
                         :icon="tec.icone"
-                        class="h-6 w-6 mr-4"
+                        class="size-6 mr-4 md:size-10 md:mr-6"
                     />
                 </span>
             </div>

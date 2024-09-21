@@ -37,6 +37,9 @@ export default {
                         opacity: 0,
                         transform: 'translateX(-300%)'
                     },
+                    '70%' : {
+                        opacity: 0
+                    },
                     '100%' : {
                         opacity: 1,
                         transform: 'translateX(0%)'

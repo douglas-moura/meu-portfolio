@@ -2,7 +2,7 @@
     <main>
         <section class="sessao-default">
             <h1>Projetos</h1>
-            <div class="linha-sessao grid-cols-3">
+            <div class="linha-sessao grid-cols-1 md:grid-cols-3">
                 <BlocoProjeto
                     v-for="projeto in meusProjetos" :key="projeto.id"
                     :periodo="projeto.periodo"
