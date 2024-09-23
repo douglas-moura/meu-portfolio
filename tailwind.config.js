@@ -11,7 +11,8 @@ export default {
                 '95dvh': '95dvh',
                 '5dvh': '5dvh',
                 '30rem': '30rem',
-                '35rem': '35rem'
+                '35rem': '35rem',
+                '50rem': '50rem'
             },
             border: {
                 'fina': '.5rem'

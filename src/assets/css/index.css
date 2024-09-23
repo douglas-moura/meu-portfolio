@@ -39,7 +39,7 @@ header, aside, nav, a {
 }
 
 h1 {
-    @apply font-black text-3xl mb-4 md:text-6xl md:mb-8 lg:text-5xl
+    @apply font-black text-3xl mb-4 md:text-6xl md:mb-8 lg:text-5xl 2xl:text-7xl
 }
     
 h2 {

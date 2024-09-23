@@ -33,16 +33,16 @@
         >
             <nav id="links-nav">
                 <RouterLink class="flex-row min-h-2 p-2 items-center rounded-md mb-2 hover:bg-zinc-200 group" to="/">
-                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900" type="user"></vue-feather>
-                    <p :class="['text-link p-0 m-0 hidden text-sm opacity-0 ease-in duration-150', {'menu-aberto-link': menuAberto.link}]">Sobre mim</p>
+                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900 2xl:size-6" type="user"></vue-feather>
+                    <p :class="['p-0 m-0 hidden text-sm opacity-0 ease-in duration-150 2xl:text-base', {'menu-aberto-link': menuAberto.link}]">Sobre mim</p>
                 </RouterLink>
                 <RouterLink class="flex-row min-h-2 p-2 items-center rounded-md mb-2 hover:bg-zinc-200 group" to="/projetos">
-                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900" type="folder"></vue-feather>
-                    <p :class="['text-link p-0 m-0 hidden text-sm opacity-0 ease-in duration-150', {'menu-aberto-link': menuAberto.link}]">Meus Projetos</p>
+                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900 2xl:size-6" type="folder"></vue-feather>
+                    <p :class="['p-0 m-0 hidden text-sm opacity-0 ease-in duration-150 2xl:text-base', {'menu-aberto-link': menuAberto.link}]">Meus Projetos</p>
                 </RouterLink>
                 <RouterLink class="flex-row min-h-2 p-2 items-center rounded-md mb-2 hover:bg-zinc-200 group" to="/habilidades">
-                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900" type="code"></vue-feather>
-                    <p :class="['text-link p-0 m-0 hidden text-sm opacity-0 ease-in duration-150', {'menu-aberto-link': menuAberto.link}]">Minhas Habilidades</p>
+                    <vue-feather class="text-orange-600 size-5 group-hover:text-zinc-900 2xl:size-6" type="code"></vue-feather>
+                    <p :class="['p-0 m-0 hidden text-sm opacity-0 ease-in duration- 2xl:text-base', {'menu-aberto-link': menuAberto.link}]">Minhas Habilidades</p>
                 </RouterLink>
             </nav>
             <span id="links-social" :class="['w-fit pt-2 border-t-2 border-zinc-300 transition-all', {'menu-aberto-social': menuAberto.icone}]">
